@@ -14,7 +14,7 @@ There is [a code example in the docs](https://docs.particle.io/tutorials/device-
 - Writing is easy and buffered, allowing not only write() to write a byte, but also all of the variations of print(), println(), printf(), printlnf(), etc. that are available when using Serial, etc..
 - All of the BLE stuff is encapsulated so you don't have to worry about it.
 
-Documentation can be found at: [https://rickkas7.github.io/BleSerialPeripheralRK](https://rickkas7.github.io/BleSerialPeripheralRK)
+Documentation can be found at: [https://rickkas7.github.io/BleSerialPeripheralRK/index.html](https://rickkas7.github.io/BleSerialPeripheralRK/index.html)
 
 Github repository: [https://github.com/rickkas7/BleSerialPeripheralRK](https://github.com/rickkas7/BleSerialPeripheralRK)
 
