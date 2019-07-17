@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_ble_serial_peripheral_lock" kind="class" language="C++" prot="public">
+    <compoundname>BleSerialPeripheralLock</compoundname>
+    <includes refid="_ble_serial_peripheral_r_k_8h" local="no">BleSerialPeripheralRK.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_ble_serial_peripheral_lock_1a770b9c16380ab8da597a4e229d28c3a7" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_ble_serial_peripheral_base" kindref="compound">BleSerialPeripheralBase</ref> *</type>
+        <definition>BleSerialPeripheralBase* BleSerialPeripheralLock::parent</definition>
+        <argsstring></argsstring>
+        <name>parent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="226" column="1" bodyfile="src/BleSerialPeripheralRK.h" bodystart="226" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_ble_serial_peripheral_lock_1af087b1f0c3a1ec5f0717bea4f9ab297a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>BleSerialPeripheralLock::BleSerialPeripheralLock</definition>
+        <argsstring>(BleSerialPeripheralBase *parent)</argsstring>
+        <name>BleSerialPeripheralLock</name>
+        <param>
+          <type><ref refid="class_ble_serial_peripheral_base" kindref="compound">BleSerialPeripheralBase</ref> *</type>
+          <declname>parent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="217" column="1" bodyfile="src/BleSerialPeripheralRK.h" bodystart="217" bodyend="219"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ble_serial_peripheral_lock_1a7557d83658953822f885ab4ab72ec1fc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>BleSerialPeripheralLock::~BleSerialPeripheralLock</definition>
+        <argsstring>()</argsstring>
+        <name>~BleSerialPeripheralLock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="221" column="1" bodyfile="src/BleSerialPeripheralRK.h" bodystart="221" bodyend="223"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class to lock and unlock the tx mutex automatically. Allocate this object on the stack so when it goes out of scope the mutex will always be released. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="8">
+        <label>BleSerialPeripheralLock</label>
+        <link refid="class_ble_serial_peripheral_lock"/>
+        <childnode refid="9" relation="usage">
+          <edgelabel>parent</edgelabel>
+        </childnode>
+      </node>
+      <node id="11">
+        <label>Print</label>
+        <link refid="class_print"/>
+      </node>
+      <node id="9">
+        <label>BleSerialPeripheralBase</label>
+        <link refid="class_ble_serial_peripheral_base"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>Stream</label>
+        <link refid="class_stream"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/BleSerialPeripheralRK.h" line="215" column="1" bodyfile="src/BleSerialPeripheralRK.h" bodystart="215" bodyend="227"/>
+    <listofallmembers>
+      <member refid="class_ble_serial_peripheral_lock_1af087b1f0c3a1ec5f0717bea4f9ab297a" prot="public" virt="non-virtual"><scope>BleSerialPeripheralLock</scope><name>BleSerialPeripheralLock</name></member>
+      <member refid="class_ble_serial_peripheral_lock_1a770b9c16380ab8da597a4e229d28c3a7" prot="protected" virt="non-virtual"><scope>BleSerialPeripheralLock</scope><name>parent</name></member>
+      <member refid="class_ble_serial_peripheral_lock_1a7557d83658953822f885ab4ab72ec1fc" prot="public" virt="non-virtual"><scope>BleSerialPeripheralLock</scope><name>~BleSerialPeripheralLock</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

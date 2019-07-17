@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_ble_serial_peripheral_static" kind="class" language="C++" prot="public">
+    <compoundname>BleSerialPeripheralStatic</compoundname>
+    <basecompoundref refid="class_ble_serial_peripheral_base" prot="public" virt="non-virtual">BleSerialPeripheralBase</basecompoundref>
+    <includes refid="_ble_serial_peripheral_r_k_8h" local="no">BleSerialPeripheralRK.h</includes>
+    <templateparamlist>
+      <param>
+        <type>size_t</type>
+        <declname>TX_BUF_SIZE</declname>
+        <defname>TX_BUF_SIZE</defname>
+      </param>
+      <param>
+        <type>size_t</type>
+        <declname>RX_BUF_SIZE</declname>
+        <defname>RX_BUF_SIZE</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_ble_serial_peripheral_static_1ad6a9a465b7792a4100c58e454470184a" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t BleSerialPeripheralStatic&lt; TX_BUF_SIZE, RX_BUF_SIZE &gt;::txBufStatic[TX_BUF_SIZE]</definition>
+        <argsstring>[TX_BUF_SIZE]</argsstring>
+        <name>txBufStatic</name>
+        <briefdescription>
+<para>static transmit buffer </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="207" column="1" bodyfile="src/BleSerialPeripheralRK.h" bodystart="204" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ble_serial_peripheral_static_1a205f6db896b66171e62ade9eb52a92ee" prot="private" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t BleSerialPeripheralStatic&lt; TX_BUF_SIZE, RX_BUF_SIZE &gt;::rxBufStatic[RX_BUF_SIZE]</definition>
+        <argsstring>[RX_BUF_SIZE]</argsstring>
+        <name>rxBufStatic</name>
+        <briefdescription>
+<para>static receive buffer </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="208" column="1" bodyfile="src/BleSerialPeripheralRK.h" bodystart="208" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_ble_serial_peripheral_static_1a5ce783c0ebcee852e4cf0541f5167105" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>BleSerialPeripheralStatic&lt; TX_BUF_SIZE, RX_BUF_SIZE &gt;::BleSerialPeripheralStatic</definition>
+        <argsstring>()</argsstring>
+        <name>BleSerialPeripheralStatic</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="204" column="1" bodyfile="src/BleSerialPeripheralRK.h" bodystart="204" bodyend="204"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>BleSerialPeripheral with static buffers. This is the object you will normally create, as a global variable. </para>    </briefdescription>
+    <detaileddescription>
+<para>TX_BUF_SIZE is the size of the txBuf in bytes. Since data is bunched up and sent out from loop this must be larger than the largest chunk of data you ever intend to send.</para><para>RX_BUF_SIZE is the size of the rxBuf in bytes. Since data is received asynchronously, this must be larger than the most data you will receive and read in <ref refid="class_ble_serial_peripheral_base_1a441dc005092891279967444cb2dc2ff2" kindref="member">loop()</ref>.</para><para>You can only have one <ref refid="class_ble_serial_peripheral_static" kindref="compound">BleSerialPeripheralStatic</ref> or <ref refid="class_ble_serial_peripheral_base" kindref="compound">BleSerialPeripheralBase</ref> object per device! </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="12">
+        <label>BleSerialPeripheralStatic&lt; TX_BUF_SIZE, RX_BUF_SIZE &gt;</label>
+        <link refid="class_ble_serial_peripheral_static"/>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>Print</label>
+        <link refid="class_print"/>
+      </node>
+      <node id="13">
+        <label>BleSerialPeripheralBase</label>
+        <link refid="class_ble_serial_peripheral_base"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>Stream</label>
+        <link refid="class_stream"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="16">
+        <label>BleSerialPeripheralStatic&lt; TX_BUF_SIZE, RX_BUF_SIZE &gt;</label>
+        <link refid="class_ble_serial_peripheral_static"/>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>Print</label>
+        <link refid="class_print"/>
+      </node>
+      <node id="17">
+        <label>BleSerialPeripheralBase</label>
+        <link refid="class_ble_serial_peripheral_base"/>
+        <childnode refid="18" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>Stream</label>
+        <link refid="class_stream"/>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/BleSerialPeripheralRK.h" line="202" column="1" bodyfile="src/BleSerialPeripheralRK.h" bodystart="202" bodyend="209"/>
+    <listofallmembers>
+      <member refid="class_ble_serial_peripheral_base_1a870258aa62e285cc0e2717476ae51145" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>advertise</name></member>
+      <member refid="class_ble_serial_peripheral_base_1a946cc56677f03db99de9409851427941" prot="public" virt="virtual"><scope>BleSerialPeripheralStatic</scope><name>available</name></member>
+      <member refid="class_ble_serial_peripheral_base_1a1c1811adb8b03e7c0cb6e5f6c0a42fab" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>BleSerialPeripheralBase</name></member>
+      <member refid="class_ble_serial_peripheral_static_1a5ce783c0ebcee852e4cf0541f5167105" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>BleSerialPeripheralStatic</name></member>
+      <member refid="class_ble_serial_peripheral_base_1af2dc5ee170da6783176ce6c96456fdb4" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>clearRxLost</name></member>
+      <member refid="class_ble_serial_peripheral_base_1a3f7273afa5985d6df935b530d9550b6c" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>clearTxLost</name></member>
+      <member refid="class_print_1aec9ecf84cc6d9087a650def3cefc459e" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>clearWriteError</name></member>
+      <member refid="class_stream_1a4bab30ccd324efd461dee46a2339f673" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>find</name></member>
+      <member refid="class_stream_1ad851401f2318cdb1de05707e021b81d9" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>find</name></member>
+      <member refid="class_stream_1ad1f5f6600832396fb38a897baf4de35b" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>findUntil</name></member>
+      <member refid="class_stream_1a3a9497de614792103ab8cb4759e01a69" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>findUntil</name></member>
+      <member refid="class_ble_serial_peripheral_base_1a27e43dcfd3cb2edee33b19ba9017ad7f" prot="public" virt="virtual"><scope>BleSerialPeripheralStatic</scope><name>flush</name></member>
+      <member refid="class_ble_serial_peripheral_base_1a97cee829a39ff3a62e3108f05fba64d8" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>getRxLost</name></member>
+      <member refid="class_ble_serial_peripheral_base_1a0457f2495023d47468a2f5b1964c0233" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>getServiceUuid</name></member>
+      <member refid="class_ble_serial_peripheral_base_1a09c779ad7767bc195687c525548127d9" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>getTxLost</name></member>
+      <member refid="class_ble_serial_peripheral_base_1aa4ca5408c166841e1fd5ea9aa3a1c4a5" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>getTxMaxWrite</name></member>
+      <member refid="class_print_1a88a4a829fb5d589efb43955ad0cbddcc" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>getWriteError</name></member>
+      <member refid="class_ble_serial_peripheral_base_1a4dac5d6f8efb72b1df255e942a054560" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>lock</name></member>
+      <member refid="class_ble_serial_peripheral_base_1a441dc005092891279967444cb2dc2ff2" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>loop</name></member>
+      <member refid="class_stream_1a5e5a0cc11eb586d89dcb7fa8e53a87e8" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>parseFloat</name></member>
+      <member refid="class_stream_1a497ffcbcb4d5bb889a8fde487bcc1b98" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>parseInt</name></member>
+      <member refid="class_ble_serial_peripheral_base_1a6ba8319f3b1a69c96c4e8b3f8dde5bbc" prot="public" virt="virtual"><scope>BleSerialPeripheralStatic</scope><name>peek</name></member>
+      <member refid="class_print_1acfe80773011eb17dfb52c2fba517a093" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>print</name></member>
+      <member refid="class_print_1a1e411d07a8ffec5faf7ce485bac0f029" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>print</name></member>
+      <member refid="class_print_1ae35481e77567618140cd58d8b96d3747" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>print</name></member>
+      <member refid="class_print_1aa28ddbde83b14df73b41c919ecc4478f" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>print</name></member>
+      <member refid="class_print_1afcd7d3a184df961a502643e4fb638c52" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>print</name></member>
+      <member refid="class_print_1a0c663ac015ebc037ea044ba2e2cf2947" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>print</name></member>
+      <member refid="class_print_1acb8c6dcd4339b024436002aa9a6f4be2" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>print</name></member>
+      <member refid="class_print_1ad89472bdb6539423a42d350beec02ff4" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>print</name></member>
+      <member refid="class_print_1a901b0f06ae34aab31b8fbb4298f0596e" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>print</name></member>
+      <member refid="class_print_1a08a461c9fee5fd8f5795d6e9f61e3d5b" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>printf</name></member>
+      <member refid="class_print_1ad337ce3f7977411b7d34d47a51e5737e" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>println</name></member>
+      <member refid="class_print_1a80fdd92db4b396062586bcb3e08d3835" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>println</name></member>
+      <member refid="class_print_1a000b3fd5b723cb6c7db0d3231a9ef2f8" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>println</name></member>
+      <member refid="class_print_1a82aa91bbd859f28a0a3b4869e5bfcadd" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>println</name></member>
+      <member refid="class_print_1a2608232c1f10f654111ff447de16d60b" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>println</name></member>
+      <member refid="class_print_1a82bbe59b28440c29e55ff3597eb45376" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>println</name></member>
+      <member refid="class_print_1afa936d7e8dd329d9162f2cd28f42681e" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>println</name></member>
+      <member refid="class_print_1a178b90baf9f74f0945f5c64aafec59ea" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>println</name></member>
+      <member refid="class_print_1a20f9e104153b62e720c9b4c348b44f00" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>println</name></member>
+      <member refid="class_print_1a169b128f9e22f0c15883768f580541a2" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>println</name></member>
+      <member refid="class_print_1afa41aa5211c54b7b4d79b9286880c337" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>printlnf</name></member>
+      <member refid="class_ble_serial_peripheral_base_1a4933bc35d89028134597b46315806ce4" prot="public" virt="virtual"><scope>BleSerialPeripheralStatic</scope><name>read</name></member>
+      <member refid="class_stream_1a45fd1336a323ea83b16e8507055f44ea" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>readBytes</name></member>
+      <member refid="class_stream_1af84672a4fb2620466958d3118d4fea00" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>readBytesUntil</name></member>
+      <member refid="class_stream_1a1c60bdda2b65d78e5a1362d51b856c5a" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>readString</name></member>
+      <member refid="class_stream_1a6a409da87c552909260d8cc428c5ca70" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>readStringUntil</name></member>
+      <member refid="class_ble_serial_peripheral_static_1a205f6db896b66171e62ade9eb52a92ee" prot="private" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>rxBufStatic</name></member>
+      <member refid="class_stream_1abaa50647d6dbb3baf7697a2691a06177" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>setTimeout</name></member>
+      <member refid="class_ble_serial_peripheral_base_1a454bb53617c96d564f3e20d13765de9f" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>setTxMaxWrite</name></member>
+      <member refid="class_ble_serial_peripheral_base_1a01072243aecf86ea5030019a6e900fbb" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>setup</name></member>
+      <member refid="class_ble_serial_peripheral_static_1ad6a9a465b7792a4100c58e454470184a" prot="private" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>txBufStatic</name></member>
+      <member refid="class_ble_serial_peripheral_base_1ab6c9183c6e2d42babe005b222b984d03" prot="public" virt="non-virtual"><scope>BleSerialPeripheralStatic</scope><name>unlock</name></member>
+      <member refid="class_ble_serial_peripheral_base_1ac041322685f26d921f60d01a2ed99e83" prot="public" virt="virtual"><scope>BleSerialPeripheralStatic</scope><name>write</name></member>
+      <member refid="class_print_1a5b40e0e9cab1f2fe5bb0cb22ffe5adda" prot="public" virt="non-virtual" ambiguityscope="Stream::"><scope>BleSerialPeripheralStatic</scope><name>write</name></member>
+      <member refid="class_print_1a88864e109589a5be9b0f5ba1327f8421" prot="public" virt="virtual" ambiguityscope="Stream::"><scope>BleSerialPeripheralStatic</scope><name>write</name></member>
+      <member refid="class_ble_serial_peripheral_base_1ab693dd8a00b3af5ed375d68647bb4712" prot="public" virt="virtual"><scope>BleSerialPeripheralStatic</scope><name>~BleSerialPeripheralBase</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,155 @@
+\hypertarget{class_ring_buffer}{}\section{Ring\+Buffer$<$ T $>$ Class Template Reference}
+\label{class_ring_buffer}\index{Ring\+Buffer$<$ T $>$@{Ring\+Buffer$<$ T $>$}}
+
+
+Thread and interrupt-\/safe (with caveats) circular buffer (ring buffer) class.  
+
+
+
+
+{\ttfamily \#include $<$Ring\+Buffer.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ring_buffer_a234232078f579680a091bc504b5eee5e}{Ring\+Buffer}} (T $\ast$elems, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Construct a buffer of size elements of T. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ring_buffer_a2ea502f6493ca669f07f9f01a4a94bdb}\label{class_ring_buffer_a2ea502f6493ca669f07f9f01a4a94bdb}} 
+\mbox{\hyperlink{class_ring_buffer_a2ea502f6493ca669f07f9f01a4a94bdb}{$\sim$\+Ring\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_ring_buffer_a2d77169348cd228b343ba2245e1ce371}{available\+For\+Read}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of elements that can be read right now (0 = nothing can be read right now) \end{DoxyCompactList}\item 
+T $\ast$ \mbox{\hyperlink{class_ring_buffer_a724ce39b381489539fda406e06596a1d}{pre\+Read}} () const
+\begin{DoxyCompactList}\small\item\em Non-\/copy version of read. Returns a pointer to the data to be read next or N\+U\+LL if there is no data right now. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ring_buffer_aad9eebd3dc4cc774666467de89c6de86}{post\+Read}} ()
+\begin{DoxyCompactList}\small\item\em Indicates that you have finished reading the data in the pointer returned by \mbox{\hyperlink{class_ring_buffer_a724ce39b381489539fda406e06596a1d}{pre\+Read()}} and it can be reused. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ring_buffer_af4ab31038d40a4075f4f23b7f2c970cd}{read}} (T $\ast$elem)
+\begin{DoxyCompactList}\small\item\em Read with copy. You can use this instead of \mbox{\hyperlink{class_ring_buffer_a724ce39b381489539fda406e06596a1d}{pre\+Read()}} and \mbox{\hyperlink{class_ring_buffer_aad9eebd3dc4cc774666467de89c6de86}{post\+Read()}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ring_buffer_a5f17853814de662a9f15a14fddfea4bf}\label{class_ring_buffer_a5f17853814de662a9f15a14fddfea4bf}} 
+void \mbox{\hyperlink{class_ring_buffer_a5f17853814de662a9f15a14fddfea4bf}{read\+Clear}} ()
+\begin{DoxyCompactList}\small\item\em Clear outstanding entries, called from the read thread. \end{DoxyCompactList}\item 
+T $\ast$ \mbox{\hyperlink{class_ring_buffer_a60177190baecb3c438f8392d6f9a35f7}{pre\+Write}} () const
+\begin{DoxyCompactList}\small\item\em Non-\/copy version of write. Returns a pointer to the buffer to write to or N\+U\+LL if there is no space. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ring_buffer_a7d2e2f6098053c51451ff2bd35fa2252}\label{class_ring_buffer_a7d2e2f6098053c51451ff2bd35fa2252}} 
+void \mbox{\hyperlink{class_ring_buffer_a7d2e2f6098053c51451ff2bd35fa2252}{post\+Write}} ()
+\begin{DoxyCompactList}\small\item\em Commits the write. Only call if \mbox{\hyperlink{class_ring_buffer_a60177190baecb3c438f8392d6f9a35f7}{pre\+Write()}} returned a non-\/\+N\+U\+LL value. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ring_buffer_a1a9e393325923ed035b16a5b067a3951}{write}} (const T $\ast$elem)
+\begin{DoxyCompactList}\small\item\em Write with copy. You can use this instead of \mbox{\hyperlink{class_ring_buffer_a60177190baecb3c438f8392d6f9a35f7}{pre\+Write()}} and \mbox{\hyperlink{class_ring_buffer_a7d2e2f6098053c51451ff2bd35fa2252}{post\+Write()}}. elem is copied. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class Ring\+Buffer$<$ T $>$}
+
+Thread and interrupt-\/safe (with caveats) circular buffer (ring buffer) class. 
+
+Home\+: \href{https://github.com/rickkas7/SerialBufferRK}{\tt https\+://github.\+com/rickkas7/\+Serial\+Buffer\+RK} License\+: M\+IT This class assumes a single reader thread and a single writer thread (or interrupt). For example, it works great if you read out of loop() and write from a single interrupt handler. It is not safe for multiple reader or multiple writer use cases!
+
+Assumption\+: Writing a size\+\_\+t value is atomic. It definitely is safe on A\+RM processors. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_ring_buffer_a234232078f579680a091bc504b5eee5e}\label{class_ring_buffer_a234232078f579680a091bc504b5eee5e}} 
+\index{Ring\+Buffer@{Ring\+Buffer}!Ring\+Buffer@{Ring\+Buffer}}
+\index{Ring\+Buffer@{Ring\+Buffer}!Ring\+Buffer@{Ring\+Buffer}}
+\subsubsection{\texorpdfstring{Ring\+Buffer()}{RingBuffer()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{class_ring_buffer}{Ring\+Buffer}}$<$ T $>$\+::\mbox{\hyperlink{class_ring_buffer}{Ring\+Buffer}} (\begin{DoxyParamCaption}\item[{T $\ast$}]{elems,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a buffer of size elements of T. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elems} & Pointer to a buffer of size elements of type T\\
+\hline
+{\em size} & Number of elements \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ring_buffer_a2d77169348cd228b343ba2245e1ce371}\label{class_ring_buffer_a2d77169348cd228b343ba2245e1ce371}} 
+\index{Ring\+Buffer@{Ring\+Buffer}!available\+For\+Read@{available\+For\+Read}}
+\index{available\+For\+Read@{available\+For\+Read}!Ring\+Buffer@{Ring\+Buffer}}
+\subsubsection{\texorpdfstring{available\+For\+Read()}{availableForRead()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+size\+\_\+t \mbox{\hyperlink{class_ring_buffer}{Ring\+Buffer}}$<$ T $>$\+::available\+For\+Read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the number of elements that can be read right now (0 = nothing can be read right now) 
+
+This is mainly for informational purposes. It\textquotesingle{}s more efficient to call \mbox{\hyperlink{class_ring_buffer_a724ce39b381489539fda406e06596a1d}{pre\+Read()}} and check for a non-\/\+N\+U\+LL return value than it is to call \mbox{\hyperlink{class_ring_buffer_a2d77169348cd228b343ba2245e1ce371}{available\+For\+Read()}}. \mbox{\Hypertarget{class_ring_buffer_aad9eebd3dc4cc774666467de89c6de86}\label{class_ring_buffer_aad9eebd3dc4cc774666467de89c6de86}} 
+\index{Ring\+Buffer@{Ring\+Buffer}!post\+Read@{post\+Read}}
+\index{post\+Read@{post\+Read}!Ring\+Buffer@{Ring\+Buffer}}
+\subsubsection{\texorpdfstring{post\+Read()}{postRead()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{class_ring_buffer}{Ring\+Buffer}}$<$ T $>$\+::post\+Read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Indicates that you have finished reading the data in the pointer returned by \mbox{\hyperlink{class_ring_buffer_a724ce39b381489539fda406e06596a1d}{pre\+Read()}} and it can be reused. 
+
+Only call \mbox{\hyperlink{class_ring_buffer_aad9eebd3dc4cc774666467de89c6de86}{post\+Read()}} if \mbox{\hyperlink{class_ring_buffer_a724ce39b381489539fda406e06596a1d}{pre\+Read()}} returned a non-\/null value! \mbox{\Hypertarget{class_ring_buffer_a724ce39b381489539fda406e06596a1d}\label{class_ring_buffer_a724ce39b381489539fda406e06596a1d}} 
+\index{Ring\+Buffer@{Ring\+Buffer}!pre\+Read@{pre\+Read}}
+\index{pre\+Read@{pre\+Read}!Ring\+Buffer@{Ring\+Buffer}}
+\subsubsection{\texorpdfstring{pre\+Read()}{preRead()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+T$\ast$ \mbox{\hyperlink{class_ring_buffer}{Ring\+Buffer}}$<$ T $>$\+::pre\+Read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Non-\/copy version of read. Returns a pointer to the data to be read next or N\+U\+LL if there is no data right now. 
+
+If \mbox{\hyperlink{class_ring_buffer_a724ce39b381489539fda406e06596a1d}{pre\+Read()}} returns a non-\/null value you must call \mbox{\hyperlink{class_ring_buffer_aad9eebd3dc4cc774666467de89c6de86}{post\+Read()}} to consume the data, otherwise the next time you call \mbox{\hyperlink{class_ring_buffer_a724ce39b381489539fda406e06596a1d}{pre\+Read()}} you\textquotesingle{}ll get the same data back. Don\textquotesingle{}t call \mbox{\hyperlink{class_ring_buffer_aad9eebd3dc4cc774666467de89c6de86}{post\+Read()}} if you get N\+U\+LL back from \mbox{\hyperlink{class_ring_buffer_a724ce39b381489539fda406e06596a1d}{pre\+Read()}}!
+
+It\textquotesingle{}s OK to not call \mbox{\hyperlink{class_ring_buffer_aad9eebd3dc4cc774666467de89c6de86}{post\+Read()}} if you\textquotesingle{}re doing a peek at the data -\/ look at the data that will be read without removing it. \mbox{\Hypertarget{class_ring_buffer_a60177190baecb3c438f8392d6f9a35f7}\label{class_ring_buffer_a60177190baecb3c438f8392d6f9a35f7}} 
+\index{Ring\+Buffer@{Ring\+Buffer}!pre\+Write@{pre\+Write}}
+\index{pre\+Write@{pre\+Write}!Ring\+Buffer@{Ring\+Buffer}}
+\subsubsection{\texorpdfstring{pre\+Write()}{preWrite()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+T$\ast$ \mbox{\hyperlink{class_ring_buffer}{Ring\+Buffer}}$<$ T $>$\+::pre\+Write (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Non-\/copy version of write. Returns a pointer to the buffer to write to or N\+U\+LL if there is no space. 
+
+If \mbox{\hyperlink{class_ring_buffer_a60177190baecb3c438f8392d6f9a35f7}{pre\+Write()}} returns a non-\/null value you must call \mbox{\hyperlink{class_ring_buffer_a7d2e2f6098053c51451ff2bd35fa2252}{post\+Write()}} to commit the data, otherwise the data will not be saved. Don\textquotesingle{}t call \mbox{\hyperlink{class_ring_buffer_a7d2e2f6098053c51451ff2bd35fa2252}{post\+Write()}} if you get N\+U\+LL back from \mbox{\hyperlink{class_ring_buffer_a60177190baecb3c438f8392d6f9a35f7}{pre\+Write()}}! \mbox{\Hypertarget{class_ring_buffer_af4ab31038d40a4075f4f23b7f2c970cd}\label{class_ring_buffer_af4ab31038d40a4075f4f23b7f2c970cd}} 
+\index{Ring\+Buffer@{Ring\+Buffer}!read@{read}}
+\index{read@{read}!Ring\+Buffer@{Ring\+Buffer}}
+\subsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+bool \mbox{\hyperlink{class_ring_buffer}{Ring\+Buffer}}$<$ T $>$\+::read (\begin{DoxyParamCaption}\item[{T $\ast$}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Read with copy. You can use this instead of \mbox{\hyperlink{class_ring_buffer_a724ce39b381489539fda406e06596a1d}{pre\+Read()}} and \mbox{\hyperlink{class_ring_buffer_aad9eebd3dc4cc774666467de89c6de86}{post\+Read()}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elem} & Filled in with the data that was read. Left unchanged if there\textquotesingle{}s no data to be read.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if an element was copied or false if there was no data to read. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ring_buffer_a1a9e393325923ed035b16a5b067a3951}\label{class_ring_buffer_a1a9e393325923ed035b16a5b067a3951}} 
+\index{Ring\+Buffer@{Ring\+Buffer}!write@{write}}
+\index{write@{write}!Ring\+Buffer@{Ring\+Buffer}}
+\subsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+bool \mbox{\hyperlink{class_ring_buffer}{Ring\+Buffer}}$<$ T $>$\+::write (\begin{DoxyParamCaption}\item[{const T $\ast$}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Write with copy. You can use this instead of \mbox{\hyperlink{class_ring_buffer_a60177190baecb3c438f8392d6f9a35f7}{pre\+Write()}} and \mbox{\hyperlink{class_ring_buffer_a7d2e2f6098053c51451ff2bd35fa2252}{post\+Write()}}. elem is copied. 
+
+\begin{DoxyReturn}{Returns}
+Returns true if the operation succeeded (there was space in the buffer). 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/Ring\+Buffer.\+h\end{DoxyCompactItemize}

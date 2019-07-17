@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>BleSerialPeripheralRK</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*Library<sp/>to<sp/>simplify<sp/>using<sp/>BLE<sp/>UART<sp/>peripheral<sp/>mode<sp/>on<sp/>Gen<sp/>3<sp/>devices*</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Introduction</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Particle<sp/>Gen<sp/>3<sp/>devices<sp/>(Argon,<sp/>Boron,<sp/>Xenon)<sp/>running<sp/>Device<sp/>OS<sp/>1.3.0-rc.1<sp/>and<sp/>later<sp/>have<sp/>support<sp/>for<sp/>BLE<sp/>(Bluetooth<sp/>Low<sp/>Entergy)<sp/>in<sp/>central<sp/>and<sp/>peripheral<sp/>roles.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Nordic<sp/>Semiconductor<sp/>created<sp/>a<sp/>UART<sp/>peripheral<sp/>protocol<sp/>to<sp/>allow<sp/>central<sp/>devices<sp/>(like<sp/>mobile<sp/>phones)<sp/>to<sp/>connect<sp/>to<sp/>a<sp/>BLE<sp/>device<sp/>and<sp/>read<sp/>UART-like<sp/>data<sp/>streams.<sp/>This<sp/>is<sp/>supported<sp/>not<sp/>only<sp/>by<sp/>the<sp/>nRF<sp/>Toolbox<sp/>app,<sp/>but<sp/>also<sp/>some<sp/>other<sp/>apps<sp/>like<sp/>the<sp/>Adafruit<sp/>Bluefruit<sp/>app.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">There<sp/>is<sp/>[a<sp/>code<sp/>example<sp/>in<sp/>the<sp/>docs](https://docs.particle.io/tutorials/device-os/bluetooth-le/#uart-peripheral),<sp/>however<sp/>this<sp/>class<sp/>encapsulates<sp/>the<sp/>BLE<sp/>stuff<sp/>and<sp/>makes<sp/>a<sp/>Serial-like<sp/>interface<sp/>to<sp/>it.<sp/>Among<sp/>the<sp/>benefits:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Reading<sp/>is<sp/>easy<sp/>using<sp/>standard<sp/>functions<sp/>like<sp/>read(),<sp/>readUntil(),<sp/>readString(),<sp/>etc.<sp/>like<sp/>you<sp/>can<sp/>from<sp/>Serial,<sp/>Serial1,<sp/>etc..</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Writing<sp/>is<sp/>easy<sp/>and<sp/>buffered,<sp/>allowing<sp/>not<sp/>only<sp/>write()<sp/>to<sp/>write<sp/>a<sp/>byte,<sp/>but<sp/>also<sp/>all<sp/>of<sp/>the<sp/>variations<sp/>of<sp/>print(),<sp/>println(),<sp/>printf(),<sp/>printlnf(),<sp/>etc.<sp/>that<sp/>are<sp/>available<sp/>when<sp/>using<sp/>Serial,<sp/>etc..</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>All<sp/>of<sp/>the<sp/>BLE<sp/>stuff<sp/>is<sp/>encapsulated<sp/>so<sp/>you<sp/>don&apos;t<sp/>have<sp/>to<sp/>worry<sp/>about<sp/>it.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Example</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">There<sp/>is<sp/>one<sp/>example<sp/>in<sp/>1-simple-BleSerialPeripheralRK:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&quot;BleSerialPeripheralRK.h&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SerialLogHandler<sp/>logHandler;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SYSTEM_THREAD(ENABLED);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>First<sp/>parameter<sp/>is<sp/>the<sp/>transmit<sp/>buffer<sp/>size,<sp/>second<sp/>parameter<sp/>is<sp/>the<sp/>receive<sp/>buffer<sp/>size</highlight></codeline>
+<codeline><highlight class="normal">BleSerialPeripheralStatic&lt;32,<sp/>256&gt;<sp/>bleSerial;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">const<sp/>unsigned<sp/>long<sp/>TRANSMIT_PERIOD_MS<sp/>=<sp/>2000;</highlight></codeline>
+<codeline><highlight class="normal">unsigned<sp/>long<sp/>lastTransmit<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>counter<sp/>=<sp/>0;</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void<sp/>setup()<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Serial.begin();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>This<sp/>must<sp/>be<sp/>called<sp/>from<sp/>setup()!</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>bleSerial.setup();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>If<sp/>you<sp/>don&apos;t<sp/>have<sp/>any<sp/>other<sp/>services<sp/>to<sp/>advertise,<sp/>just<sp/>call<sp/>advertise().</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Otherwise,<sp/>call<sp/>getServiceUuid()<sp/>to<sp/>get<sp/>the<sp/>serial<sp/>service<sp/>UUID<sp/>and<sp/>add<sp/>that<sp/>to<sp/>your</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>custom<sp/>advertising<sp/>data<sp/>payload<sp/>and<sp/>call<sp/>BLE.advertise()<sp/>yourself<sp/>with<sp/>all<sp/>of<sp/>your<sp/>necessary</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>services<sp/>added.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>bleSerial.advertise();</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void<sp/>loop()<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>This<sp/>must<sp/>be<sp/>called<sp/>from<sp/>loop()<sp/>on<sp/>every<sp/>call<sp/>to<sp/>loop.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>bleSerial.loop();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Print<sp/>out<sp/>anything<sp/>we<sp/>receive</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if(bleSerial.available())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>String<sp/>s<sp/>=<sp/>bleSerial.readString();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.info(&quot;received:<sp/>%s&quot;,<sp/>s.c_str());</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(millis()<sp/>-<sp/>lastTransmit<sp/>&gt;=<sp/>TRANSMIT_PERIOD_MS)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lastTransmit<sp/>=<sp/>millis();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Every<sp/>two<sp/>seconds,<sp/>send<sp/>something<sp/>to<sp/>the<sp/>other<sp/>side</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bleSerial.printlnf(&quot;testing<sp/>%d&quot;,<sp/>++counter);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.info(&quot;counter=%d&quot;,<sp/>counter);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Among<sp/>the<sp/>important<sp/>things:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>normally<sp/>instantiate<sp/>a<sp/>BleSerialPeripheralStatic<sp/>object<sp/>as<sp/>a<sp/>global<sp/>variable.<sp/>The<sp/>first<sp/>number<sp/>in<sp/>the<sp/>&lt;&gt;<sp/>is<sp/>the<sp/>transmit<sp/>buffer<sp/>size<sp/>and<sp/>the<sp/>second<sp/>is<sp/>the<sp/>receive<sp/>buffer<sp/>size.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>First<sp/>parameter<sp/>is<sp/>the<sp/>transmit<sp/>buffer<sp/>size,<sp/>second<sp/>parameter<sp/>is<sp/>the<sp/>receive<sp/>buffer<sp/>size</highlight></codeline>
+<codeline><highlight class="normal">BleSerialPeripheralStatic&lt;256,<sp/>256&gt;<sp/>bleSerial;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Because<sp/>the<sp/>data<sp/>is<sp/>buffered<sp/>and<sp/>only<sp/>sent<sp/>from<sp/>loop()<sp/>the<sp/>transmit<sp/>buffer<sp/>must<sp/>be<sp/>larger<sp/>than<sp/>the<sp/>amount<sp/>of<sp/>data<sp/>you<sp/>intend<sp/>to<sp/>sent<sp/>at<sp/>once,<sp/>or<sp/>the<sp/>maximum<sp/>data<sp/>that<sp/>will<sp/>accumulate<sp/>between<sp/>calls<sp/>to<sp/>loop.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Likewise,<sp/>since<sp/>data<sp/>is<sp/>read<sp/>from<sp/>loop<sp/>but<sp/>received<sp/>asynchronously<sp/>by<sp/>BLE,<sp/>you<sp/>must<sp/>have<sp/>a<sp/>receive<sp/>buffer<sp/>that<sp/>is<sp/>large<sp/>enough<sp/>to<sp/>hold<sp/>any<sp/>data<sp/>between<sp/>times<sp/>you<sp/>will<sp/>be<sp/>processing<sp/>it<sp/>from<sp/>your<sp/>loop<sp/>function.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>there<sp/>is<sp/>a<sp/>data<sp/>overflow<sp/>situation,<sp/>the<sp/>data<sp/>is<sp/>discarded.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Be<sp/>sure<sp/>to<sp/>call<sp/>this<sp/>from<sp/>your<sp/>setup()<sp/>function.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">bleSerial.setup();</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>are<sp/>only<sp/>using<sp/>BLE<sp/>UART<sp/>you<sp/>can<sp/>call:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">bleSerial.advertise();</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>are<sp/>advertising<sp/>multiple<sp/>services,<sp/>instead<sp/>call<sp/>`bleSerial.getServiceUuid()`<sp/>to<sp/>get<sp/>the<sp/>UART<sp/>serial<sp/>UUID<sp/>and<sp/>add<sp/>it<sp/>with<sp/>your<sp/>own<sp/>services:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">BleAdvertisingData<sp/>data;</highlight></codeline>
+<codeline><highlight class="normal">data.appendServiceUUID(bleSerial.getServiceUuid());</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>append<sp/>your<sp/>own<sp/>service<sp/>UUIDs<sp/>here</highlight></codeline>
+<codeline><highlight class="normal">BLE.advertise(&amp;data);</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Be<sp/>sure<sp/>to<sp/>call<sp/>this<sp/>from<sp/>loop,<sp/>as<sp/>often<sp/>as<sp/>possible.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">bleSerial.loop();</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>this<sp/>example<sp/>we<sp/>used<sp/>`bleSerial.readString()`<sp/>but<sp/>there<sp/>are<sp/>many<sp/>method<sp/>of<sp/>the<sp/>Stream<sp/>class<sp/>to<sp/>read.<sp/>Beware<sp/>of<sp/>blocking,<sp/>however.<sp/>If<sp/>you<sp/>are<sp/>waiting<sp/>to<sp/>read<sp/>a<sp/>string,<sp/>you<sp/>won&apos;t<sp/>be<sp/>calling<sp/>`bleSerial.loop()`<sp/>and<sp/>data<sp/>won&apos;t<sp/>be<sp/>transmitted<sp/>during<sp/>that<sp/>time.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Finally,<sp/>you<sp/>can<sp/>print<sp/>to<sp/>BLE<sp/>serial<sp/>using<sp/>all<sp/>of<sp/>the<sp/>standard<sp/>Stream<sp/>methods.<sp/>The<sp/>example<sp/>uses<sp/>`bleSerial.printlnf()`<sp/>to<sp/>print<sp/>a<sp/>line<sp/>using<sp/>`sprintf`<sp/>formatting.</highlight></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>

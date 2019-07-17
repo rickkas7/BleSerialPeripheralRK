@@ -1,0 +1,299 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_ble_serial_peripheral_r_k_8cpp" kind="file" language="C++">
+    <compoundname>BleSerialPeripheralRK.cpp</compoundname>
+    <includes refid="_ble_serial_peripheral_r_k_8h" local="yes">BleSerialPeripheralRK.h</includes>
+    <incdepgraph>
+      <node id="22">
+        <label>RingBuffer.h</label>
+        <link refid="_ring_buffer_8h_source"/>
+      </node>
+      <node id="19">
+        <label>src/BleSerialPeripheralRK.cpp</label>
+        <link refid="_ble_serial_peripheral_r_k_8cpp"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>BleSerialPeripheralRK.h</label>
+        <link refid="_ble_serial_peripheral_r_k_8h_source"/>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>Particle.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_ble_serial_peripheral_r_k_8cpp_1a05e63d28a7319573e05acedc61e03152" prot="public" static="no">
+        <name>LOG_DEBUG</name>
+        <param><defname>x</defname></param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.cpp" line="12" column="11" bodyfile="src/BleSerialPeripheralRK.cpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_ble_serial_peripheral_r_k_8cpp_1a32e06ef4423569878dedb2b16e4597d5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const BleUuid</type>
+        <definition>static const BleUuid serviceUuid</definition>
+        <argsstring>(&quot;6E400001-B5A3-F393-E0A9-E50E24DCCA9E&quot;)</argsstring>
+        <name>serviceUuid</name>
+        <param>
+          <type>&quot;6E400001-B5A3-F393-E0A9-E50E24DCCA9E&quot;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.cpp" line="4" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_ble_serial_peripheral_r_k_8cpp_1afcd14a37ed4deff847879ade81b91795" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const BleUuid</type>
+        <definition>static const BleUuid rxUuid</definition>
+        <argsstring>(&quot;6E400002-B5A3-F393-E0A9-E50E24DCCA9E&quot;)</argsstring>
+        <name>rxUuid</name>
+        <param>
+          <type>&quot;6E400002-B5A3-F393-E0A9-E50E24DCCA9E&quot;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.cpp" line="5" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_ble_serial_peripheral_r_k_8cpp_1aaef755f1df257d1ec6199c3c90cf333e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const BleUuid</type>
+        <definition>static const BleUuid txUuid</definition>
+        <argsstring>(&quot;6E400003-B5A3-F393-E0A9-E50E24DCCA9E&quot;)</argsstring>
+        <name>txUuid</name>
+        <param>
+          <type>&quot;6E400003-B5A3-F393-E0A9-E50E24DCCA9E&quot;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.cpp" line="6" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;BleSerialPeripheralRK.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BleUuid<sp/>serviceUuid(</highlight><highlight class="stringliteral">&quot;6E400001-B5A3-F393-E0A9-E50E24DCCA9E&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BleUuid<sp/>rxUuid(</highlight><highlight class="stringliteral">&quot;6E400002-B5A3-F393-E0A9-E50E24DCCA9E&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BleUuid<sp/>txUuid(</highlight><highlight class="stringliteral">&quot;6E400003-B5A3-F393-E0A9-E50E24DCCA9E&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#define<sp/>ENABLE_LOG_DEBUG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>ENABLE_LOG_DEBUG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>LOG_DEBUG(x)<sp/>Log.info<sp/>x;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>LOG_DEBUG(x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><ref refid="class_ble_serial_peripheral_base_1a1c1811adb8b03e7c0cb6e5f6c0a42fab" kindref="member">BleSerialPeripheralBase::BleSerialPeripheralBase</ref>(uint8_t<sp/>*txBuf,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>txBufSize,<sp/>uint8_t<sp/>*rxBuf,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>rxBufSize)<sp/>:</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>txBuf(txBuf),<sp/>txBufSize(txBufSize),</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>txCharacteristic(</highlight><highlight class="stringliteral">&quot;tx&quot;</highlight><highlight class="normal">,<sp/>BleCharacteristicProperty::NOTIFY,<sp/>txUuid,<sp/>serviceUuid),</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rxCharacteristic(</highlight><highlight class="stringliteral">&quot;rx&quot;</highlight><highlight class="normal">,<sp/>BleCharacteristicProperty::WRITE_WO_RSP,<sp/>rxUuid,<sp/>serviceUuid,<sp/>onDataReceivedStatic,<sp/>this),</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rxRing(rxBuf,<sp/>rxBufSize)<sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><ref refid="class_ble_serial_peripheral_base_1ab693dd8a00b3af5ed375d68647bb4712" kindref="member">BleSerialPeripheralBase::~BleSerialPeripheralBase</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_ble_serial_peripheral_base_1a01072243aecf86ea5030019a6e900fbb" kindref="member">BleSerialPeripheralBase::setup</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>BLE.addCharacteristic(txCharacteristic);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>BLE.addCharacteristic(rxCharacteristic);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>os_mutex_create(&amp;mutex);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>LOG_DEBUG((</highlight><highlight class="stringliteral">&quot;setup<sp/>complete&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_ble_serial_peripheral_base_1a441dc005092891279967444cb2dc2ff2" kindref="member">BleSerialPeripheralBase::loop</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(txCur<sp/>&gt;<sp/>0<sp/>&amp;&amp;<sp/>BLE.connected())<sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LOG_DEBUG((</highlight><highlight class="stringliteral">&quot;txCur=%u&quot;</highlight><highlight class="normal">,<sp/>txCur));</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_ble_serial_peripheral_lock" kindref="compound">BleSerialPeripheralLock</ref><sp/><ref refid="class_ble_serial_peripheral_base_1a4dac5d6f8efb72b1df255e942a054560" kindref="member">lock</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>count<sp/>=<sp/>txCur;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(count<sp/>&gt;<sp/>txMaxWrite)<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>count<sp/>=<sp/>txMaxWrite;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>txCharacteristic.setValue(txBuf,<sp/>count);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LOG_DEBUG((</highlight><highlight class="stringliteral">&quot;sent<sp/>count=%u&quot;</highlight><highlight class="normal">,<sp/>count));</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(count<sp/>&lt;<sp/>txCur)<sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>transmitting<sp/>a<sp/>partial<sp/>buffer,<sp/>move<sp/>the<sp/>data<sp/>to<sp/>the<sp/>beginning<sp/>of<sp/>the<sp/>buffer.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>an<sp/>unusual<sp/>case<sp/>so<sp/>the<sp/>inefficiency<sp/>of<sp/>this<sp/>is<sp/>not<sp/>that<sp/>important.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>memmove(txBuf,<sp/>&amp;txBuf[count],<sp/>txCur<sp/>-<sp/>count);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>txCur<sp/>-=<sp/>count;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_ble_serial_peripheral_base_1a870258aa62e285cc0e2717476ae51145" kindref="member">BleSerialPeripheralBase::advertise</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>BleAdvertisingData<sp/>data;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>data.appendServiceUUID(serviceUuid);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>BLE.advertise(&amp;data);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>LOG_DEBUG((</highlight><highlight class="stringliteral">&quot;advertising&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal">BleUuid<sp/><ref refid="class_ble_serial_peripheral_base_1a0457f2495023d47468a2f5b1964c0233" kindref="member">BleSerialPeripheralBase::getServiceUuid</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>serviceUuid;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_ble_serial_peripheral_base_1a4dac5d6f8efb72b1df255e942a054560" kindref="member">BleSerialPeripheralBase::lock</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>os_mutex_lock(mutex);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_ble_serial_peripheral_base_1ab6c9183c6e2d42babe005b222b984d03" kindref="member">BleSerialPeripheralBase::unlock</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>os_mutex_unlock(mutex);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_ble_serial_peripheral_base_1a946cc56677f03db99de9409851427941" kindref="member">BleSerialPeripheralBase::available</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rxRing.<ref refid="class_ring_buffer_1a2d77169348cd228b343ba2245e1ce371" kindref="member">availableForRead</ref>();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_ble_serial_peripheral_base_1a4933bc35d89028134597b46315806ce4" kindref="member">BleSerialPeripheralBase::read</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>result<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*p<sp/>=<sp/>rxRing.<ref refid="class_ring_buffer_1a724ce39b381489539fda406e06596a1d" kindref="member">preRead</ref>();</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(p)<sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>=<sp/>(int)<sp/>*p;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rxRing.<ref refid="class_ring_buffer_1aad9eebd3dc4cc774666467de89c6de86" kindref="member">postRead</ref>();</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_ble_serial_peripheral_base_1a6ba8319f3b1a69c96c4e8b3f8dde5bbc" kindref="member">BleSerialPeripheralBase::peek</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>result<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>*p<sp/>=<sp/>rxRing.<ref refid="class_ring_buffer_1a724ce39b381489539fda406e06596a1d" kindref="member">preRead</ref>();</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(p)<sp/>{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>=<sp/>(int)<sp/>*p;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>For<sp/>peek,<sp/>don&apos;t<sp/>call<sp/>postRead()<sp/>so<sp/>the<sp/>data<sp/>will<sp/>stay<sp/>in<sp/>the<sp/>buffer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_ble_serial_peripheral_base_1a27e43dcfd3cb2edee33b19ba9017ad7f" kindref="member">BleSerialPeripheralBase::flush</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="class_ble_serial_peripheral_base_1ac041322685f26d921f60d01a2ed99e83" kindref="member">BleSerialPeripheralBase::write</ref>(uint8_t<sp/>data)<sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_ble_serial_peripheral_lock" kindref="compound">BleSerialPeripheralLock</ref><sp/><ref refid="class_ble_serial_peripheral_base_1a4dac5d6f8efb72b1df255e942a054560" kindref="member">lock</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(txCur<sp/>&lt;<sp/>txBufSize)<sp/>{</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>txBuf[txCur++]<sp/>=<sp/>data;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>txLost++;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>BleSerialPeripheralBase::onDataReceived(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t*<sp/>data,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>len,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BlePeerDevice&amp;<sp/>peer)<sp/>{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Log.trace(&quot;Received<sp/>data<sp/>from:<sp/>%02X:%02X:%02X:%02X:%02X:%02X:&quot;,<sp/>peer.address()[0],<sp/>peer.address()[1],<sp/>peer.address()[2],<sp/>peer.address()[3],<sp/>peer.address()[4],<sp/>peer.address()[5]);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>LOG_DEBUG((</highlight><highlight class="stringliteral">&quot;dataReceived<sp/>%u&quot;</highlight><highlight class="normal">,<sp/>len));</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Copy<sp/>data<sp/>into<sp/>the<sp/>buffer.<sp/>Discards<sp/>data<sp/>that<sp/>will<sp/>not<sp/>fit!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>ii<sp/>=<sp/>0;<sp/>ii<sp/>&lt;<sp/>len;<sp/>ii++)<sp/>{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!rxRing.<ref refid="class_ring_buffer_1a1a9e393325923ed035b16a5b067a3951" kindref="member">write</ref>(&amp;data[ii]))<sp/>{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rxLost++;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="comment">//<sp/>[static]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>BleSerialPeripheralBase::onDataReceivedStatic(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint8_t*<sp/>data,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>len,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BlePeerDevice&amp;<sp/>peer,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>context)<sp/>{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_ble_serial_peripheral_base" kindref="compound">BleSerialPeripheralBase</ref><sp/>*This<sp/>=<sp/>(<ref refid="class_ble_serial_peripheral_base" kindref="compound">BleSerialPeripheralBase</ref><sp/>*)context;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>This-&gt;onDataReceived(data,<sp/>len,<sp/>peer);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="146"><highlight class="comment"><sp/>*<sp/>#include<sp/>&quot;Particle.h&quot;</highlight></codeline>
+<codeline lineno="147"><highlight class="comment"></highlight></codeline>
+<codeline lineno="148"><highlight class="comment">//<sp/>This<sp/>example<sp/>does<sp/>not<sp/>require<sp/>the<sp/>cloud<sp/>so<sp/>you<sp/>can<sp/>run<sp/>it<sp/>in<sp/>manual<sp/>mode<sp/>or</highlight></codeline>
+<codeline lineno="149"><highlight class="comment">//<sp/>normal<sp/>cloud-connected<sp/>mode</highlight></codeline>
+<codeline lineno="150"><highlight class="comment">SYSTEM_MODE(MANUAL);</highlight></codeline>
+<codeline lineno="151"><highlight class="comment"></highlight></codeline>
+<codeline lineno="152"><highlight class="comment">const<sp/>size_t<sp/>UART_TX_BUF_SIZE<sp/>=<sp/>20;</highlight></codeline>
+<codeline lineno="153"><highlight class="comment"></highlight></codeline>
+<codeline lineno="154"><highlight class="comment">void<sp/>onDataReceived(const<sp/>uint8_t*<sp/>data,<sp/>size_t<sp/>len,<sp/>const<sp/>BlePeerDevice&amp;<sp/>peer,<sp/>void*<sp/>context);</highlight></codeline>
+<codeline lineno="155"><highlight class="comment"></highlight></codeline>
+<codeline lineno="156"><highlight class="comment">//<sp/>These<sp/>UUIDs<sp/>were<sp/>defined<sp/>by<sp/>Nordic<sp/>Semiconductor<sp/>and<sp/>are<sp/>now<sp/>the<sp/>defacto<sp/>standard<sp/>for</highlight></codeline>
+<codeline lineno="157"><highlight class="comment">//<sp/>UART-like<sp/>services<sp/>over<sp/>BLE.<sp/>Many<sp/>apps<sp/>support<sp/>the<sp/>UUIDs<sp/>now,<sp/>like<sp/>the<sp/>Adafruit<sp/>Bluefruit<sp/>app.</highlight></codeline>
+<codeline lineno="158"><highlight class="comment">const<sp/>BleUuid<sp/>serviceUuid(&quot;6E400001-B5A3-F393-E0A9-E50E24DCCA9E&quot;);</highlight></codeline>
+<codeline lineno="159"><highlight class="comment">const<sp/>BleUuid<sp/>rxUuid(&quot;6E400002-B5A3-F393-E0A9-E50E24DCCA9E&quot;);</highlight></codeline>
+<codeline lineno="160"><highlight class="comment">const<sp/>BleUuid<sp/>txUuid(&quot;6E400003-B5A3-F393-E0A9-E50E24DCCA9E&quot;);</highlight></codeline>
+<codeline lineno="161"><highlight class="comment"></highlight></codeline>
+<codeline lineno="162"><highlight class="comment">BleCharacteristic<sp/>txCharacteristic(&quot;tx&quot;,<sp/>BleCharacteristicProperty::NOTIFY,<sp/>txUuid,<sp/>serviceUuid);</highlight></codeline>
+<codeline lineno="163"><highlight class="comment">BleCharacteristic<sp/>rxCharacteristic(&quot;rx&quot;,<sp/>BleCharacteristicProperty::WRITE_WO_RSP,<sp/>rxUuid,<sp/>serviceUuid,<sp/>onDataReceived,<sp/>NULL);</highlight></codeline>
+<codeline lineno="164"><highlight class="comment"></highlight></codeline>
+<codeline lineno="165"><highlight class="comment">void<sp/>onDataReceived(const<sp/>uint8_t*<sp/>data,<sp/>size_t<sp/>len,<sp/>const<sp/>BlePeerDevice&amp;<sp/>peer,<sp/>void*<sp/>context)<sp/>{</highlight></codeline>
+<codeline lineno="166"><highlight class="comment"><sp/><sp/><sp/><sp/>//<sp/>Log.trace(&quot;Received<sp/>data<sp/>from:<sp/>%02X:%02X:%02X:%02X:%02X:%02X:&quot;,<sp/>peer.address()[0],<sp/>peer.address()[1],<sp/>peer.address()[2],<sp/>peer.address()[3],<sp/>peer.address()[4],<sp/>peer.address()[5]);</highlight></codeline>
+<codeline lineno="167"><highlight class="comment"></highlight></codeline>
+<codeline lineno="168"><highlight class="comment"><sp/><sp/><sp/><sp/>for<sp/>(size_t<sp/>ii<sp/>=<sp/>0;<sp/>ii<sp/>&lt;<sp/>len;<sp/>ii++)<sp/>{</highlight></codeline>
+<codeline lineno="169"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Serial.write(data[ii]);</highlight></codeline>
+<codeline lineno="170"><highlight class="comment"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="171"><highlight class="comment">}</highlight></codeline>
+<codeline lineno="172"><highlight class="comment"></highlight></codeline>
+<codeline lineno="173"><highlight class="comment">void<sp/>setup()<sp/>{</highlight></codeline>
+<codeline lineno="174"><highlight class="comment"><sp/><sp/><sp/><sp/>Serial.begin();</highlight></codeline>
+<codeline lineno="175"><highlight class="comment"></highlight></codeline>
+<codeline lineno="176"><highlight class="comment"><sp/><sp/><sp/><sp/>BLE.addCharacteristic(txCharacteristic);</highlight></codeline>
+<codeline lineno="177"><highlight class="comment"><sp/><sp/><sp/><sp/>BLE.addCharacteristic(rxCharacteristic);</highlight></codeline>
+<codeline lineno="178"><highlight class="comment"></highlight></codeline>
+<codeline lineno="179"><highlight class="comment"><sp/><sp/><sp/><sp/>BleAdvertisingData<sp/>data;</highlight></codeline>
+<codeline lineno="180"><highlight class="comment"><sp/><sp/><sp/><sp/>data.appendServiceUUID(serviceUuid);</highlight></codeline>
+<codeline lineno="181"><highlight class="comment"><sp/><sp/><sp/><sp/>BLE.advertise(&amp;data);</highlight></codeline>
+<codeline lineno="182"><highlight class="comment">}</highlight></codeline>
+<codeline lineno="183"><highlight class="comment"></highlight></codeline>
+<codeline lineno="184"><highlight class="comment">void<sp/>loop()<sp/>{</highlight></codeline>
+<codeline lineno="185"><highlight class="comment"><sp/><sp/><sp/><sp/>if<sp/>(BLE.connected())<sp/>{</highlight></codeline>
+<codeline lineno="186"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>txBuf[UART_TX_BUF_SIZE];</highlight></codeline>
+<codeline lineno="187"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>size_t<sp/>txLen<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="188"><highlight class="comment"></highlight></codeline>
+<codeline lineno="189"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>while(Serial.available()<sp/>&amp;&amp;<sp/>txLen<sp/>&lt;<sp/>UART_TX_BUF_SIZE)<sp/>{</highlight></codeline>
+<codeline lineno="190"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>txBuf[txLen++]<sp/>=<sp/>Serial.read();</highlight></codeline>
+<codeline lineno="191"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Serial.write(txBuf[txLen<sp/>-<sp/>1]);</highlight></codeline>
+<codeline lineno="192"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="193"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(txLen<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="194"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>txCharacteristic.setValue(txBuf,<sp/>txLen);</highlight></codeline>
+<codeline lineno="195"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="196"><highlight class="comment"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="197"><highlight class="comment">}</highlight></codeline>
+<codeline lineno="198"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="199"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/BleSerialPeripheralRK.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,264 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_ring_buffer" kind="class" language="C++" prot="public">
+    <compoundname>RingBuffer</compoundname>
+    <includes refid="_ring_buffer_8h" local="no">RingBuffer.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class</type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_ring_buffer_1a979d04c2507c5cd0e3846cdea159b658" prot="private" static="no" mutable="no">
+        <type>T *</type>
+        <definition>T* RingBuffer&lt; T &gt;::elems</definition>
+        <argsstring></argsstring>
+        <name>elems</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RingBuffer.h" line="141" column="1" bodyfile="src/RingBuffer.h" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ring_buffer_1a886e53095b694619c72975382a9a82f8" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t RingBuffer&lt; T &gt;::size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RingBuffer.h" line="142" column="1" bodyfile="src/RingBuffer.h" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ring_buffer_1ab5cd0599b8dd90fa811979a3eaaabb14" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>volatile size_t RingBuffer&lt; T &gt;::head</definition>
+        <argsstring></argsstring>
+        <name>head</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RingBuffer.h" line="143" column="1" bodyfile="src/RingBuffer.h" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ring_buffer_1a326b08cba9aa9ebab0af051206b59acc" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>volatile size_t RingBuffer&lt; T &gt;::tail</definition>
+        <argsstring></argsstring>
+        <name>tail</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RingBuffer.h" line="144" column="1" bodyfile="src/RingBuffer.h" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_ring_buffer_1a234232078f579680a091bc504b5eee5e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>RingBuffer&lt; T &gt;::RingBuffer</definition>
+        <argsstring>(T *elems, size_t size)</argsstring>
+        <name>RingBuffer</name>
+        <param>
+          <type>T *</type>
+          <declname>elems</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Construct a buffer of size elements of T. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>elems</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a buffer of size elements of type T</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of elements </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RingBuffer.h" line="28" column="1" bodyfile="src/RingBuffer.h" bodystart="28" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ring_buffer_1a2ea502f6493ca669f07f9f01a4a94bdb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>RingBuffer&lt; T &gt;::~RingBuffer</definition>
+        <argsstring>()</argsstring>
+        <name>~RingBuffer</name>
+        <briefdescription>
+<para>Destructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RingBuffer.h" line="33" column="1" bodyfile="src/RingBuffer.h" bodystart="33" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ring_buffer_1a2d77169348cd228b343ba2245e1ce371" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t RingBuffer&lt; T &gt;::availableForRead</definition>
+        <argsstring>() const</argsstring>
+        <name>availableForRead</name>
+        <briefdescription>
+<para>Returns the number of elements that can be read right now (0 = nothing can be read right now) </para>        </briefdescription>
+        <detaileddescription>
+<para>This is mainly for informational purposes. It&apos;s more efficient to call <ref refid="class_ring_buffer_1a724ce39b381489539fda406e06596a1d" kindref="member">preRead()</ref> and check for a non-NULL return value than it is to call <ref refid="class_ring_buffer_1a2d77169348cd228b343ba2245e1ce371" kindref="member">availableForRead()</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RingBuffer.h" line="41" column="1" bodyfile="src/RingBuffer.h" bodystart="41" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ring_buffer_1a724ce39b381489539fda406e06596a1d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T *</type>
+        <definition>T* RingBuffer&lt; T &gt;::preRead</definition>
+        <argsstring>() const</argsstring>
+        <name>preRead</name>
+        <briefdescription>
+<para>Non-copy version of read. Returns a pointer to the data to be read next or NULL if there is no data right now. </para>        </briefdescription>
+        <detaileddescription>
+<para>If <ref refid="class_ring_buffer_1a724ce39b381489539fda406e06596a1d" kindref="member">preRead()</ref> returns a non-null value you must call <ref refid="class_ring_buffer_1aad9eebd3dc4cc774666467de89c6de86" kindref="member">postRead()</ref> to consume the data, otherwise the next time you call <ref refid="class_ring_buffer_1a724ce39b381489539fda406e06596a1d" kindref="member">preRead()</ref> you&apos;ll get the same data back. Don&apos;t call <ref refid="class_ring_buffer_1aad9eebd3dc4cc774666467de89c6de86" kindref="member">postRead()</ref> if you get NULL back from <ref refid="class_ring_buffer_1a724ce39b381489539fda406e06596a1d" kindref="member">preRead()</ref>!</para><para>It&apos;s OK to not call <ref refid="class_ring_buffer_1aad9eebd3dc4cc774666467de89c6de86" kindref="member">postRead()</ref> if you&apos;re doing a peek at the data - look at the data that will be read without removing it. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RingBuffer.h" line="54" column="1" bodyfile="src/RingBuffer.h" bodystart="54" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ring_buffer_1aad9eebd3dc4cc774666467de89c6de86" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RingBuffer&lt; T &gt;::postRead</definition>
+        <argsstring>()</argsstring>
+        <name>postRead</name>
+        <briefdescription>
+<para>Indicates that you have finished reading the data in the pointer returned by <ref refid="class_ring_buffer_1a724ce39b381489539fda406e06596a1d" kindref="member">preRead()</ref> and it can be reused. </para>        </briefdescription>
+        <detaileddescription>
+<para>Only call <ref refid="class_ring_buffer_1aad9eebd3dc4cc774666467de89c6de86" kindref="member">postRead()</ref> if <ref refid="class_ring_buffer_1a724ce39b381489539fda406e06596a1d" kindref="member">preRead()</ref> returned a non-null value! </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RingBuffer.h" line="68" column="1" bodyfile="src/RingBuffer.h" bodystart="68" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ring_buffer_1af4ab31038d40a4075f4f23b7f2c970cd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool RingBuffer&lt; T &gt;::read</definition>
+        <argsstring>(T *elem)</argsstring>
+        <name>read</name>
+        <param>
+          <type>T *</type>
+          <declname>elem</declname>
+        </param>
+        <briefdescription>
+<para>Read with copy. You can use this instead of <ref refid="class_ring_buffer_1a724ce39b381489539fda406e06596a1d" kindref="member">preRead()</ref> and <ref refid="class_ring_buffer_1aad9eebd3dc4cc774666467de89c6de86" kindref="member">postRead()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>elem</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Filled in with the data that was read. Left unchanged if there&apos;s no data to be read.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns true if an element was copied or false if there was no data to read. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RingBuffer.h" line="80" column="1" bodyfile="src/RingBuffer.h" bodystart="80" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ring_buffer_1a5f17853814de662a9f15a14fddfea4bf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RingBuffer&lt; T &gt;::readClear</definition>
+        <argsstring>()</argsstring>
+        <name>readClear</name>
+        <briefdescription>
+<para>Clear outstanding entries, called from the read thread. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RingBuffer.h" line="95" column="1" bodyfile="src/RingBuffer.h" bodystart="95" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ring_buffer_1a60177190baecb3c438f8392d6f9a35f7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T *</type>
+        <definition>T* RingBuffer&lt; T &gt;::preWrite</definition>
+        <argsstring>() const</argsstring>
+        <name>preWrite</name>
+        <briefdescription>
+<para>Non-copy version of write. Returns a pointer to the buffer to write to or NULL if there is no space. </para>        </briefdescription>
+        <detaileddescription>
+<para>If <ref refid="class_ring_buffer_1a60177190baecb3c438f8392d6f9a35f7" kindref="member">preWrite()</ref> returns a non-null value you must call <ref refid="class_ring_buffer_1a7d2e2f6098053c51451ff2bd35fa2252" kindref="member">postWrite()</ref> to commit the data, otherwise the data will not be saved. Don&apos;t call <ref refid="class_ring_buffer_1a7d2e2f6098053c51451ff2bd35fa2252" kindref="member">postWrite()</ref> if you get NULL back from <ref refid="class_ring_buffer_1a60177190baecb3c438f8392d6f9a35f7" kindref="member">preWrite()</ref>! </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RingBuffer.h" line="105" column="1" bodyfile="src/RingBuffer.h" bodystart="105" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ring_buffer_1a7d2e2f6098053c51451ff2bd35fa2252" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void RingBuffer&lt; T &gt;::postWrite</definition>
+        <argsstring>()</argsstring>
+        <name>postWrite</name>
+        <briefdescription>
+<para>Commits the write. Only call if <ref refid="class_ring_buffer_1a60177190baecb3c438f8392d6f9a35f7" kindref="member">preWrite()</ref> returned a non-NULL value. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RingBuffer.h" line="117" column="1" bodyfile="src/RingBuffer.h" bodystart="117" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ring_buffer_1a1a9e393325923ed035b16a5b067a3951" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool RingBuffer&lt; T &gt;::write</definition>
+        <argsstring>(const T *elem)</argsstring>
+        <name>write</name>
+        <param>
+          <type>const T *</type>
+          <declname>elem</declname>
+        </param>
+        <briefdescription>
+<para>Write with copy. You can use this instead of <ref refid="class_ring_buffer_1a60177190baecb3c438f8392d6f9a35f7" kindref="member">preWrite()</ref> and <ref refid="class_ring_buffer_1a7d2e2f6098053c51451ff2bd35fa2252" kindref="member">postWrite()</ref>. elem is copied. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Returns true if the operation succeeded (there was space in the buffer). </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/RingBuffer.h" line="127" column="1" bodyfile="src/RingBuffer.h" bodystart="127" bodyend="138"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Thread and interrupt-safe (with caveats) circular buffer (ring buffer) class. </para>    </briefdescription>
+    <detaileddescription>
+<para>Home: <ulink url="https://github.com/rickkas7/SerialBufferRK">https://github.com/rickkas7/SerialBufferRK</ulink> License: MIT This class assumes a single reader thread and a single writer thread (or interrupt). For example, it works great if you read out of loop() and write from a single interrupt handler. It is not safe for multiple reader or multiple writer use cases!</para><para>Assumption: Writing a size_t value is atomic. It definitely is safe on ARM processors. </para>    </detaileddescription>
+    <location file="src/RingBuffer.h" line="19" column="1" bodyfile="src/RingBuffer.h" bodystart="19" bodyend="145"/>
+    <listofallmembers>
+      <member refid="class_ring_buffer_1a2d77169348cd228b343ba2245e1ce371" prot="public" virt="non-virtual"><scope>RingBuffer</scope><name>availableForRead</name></member>
+      <member refid="class_ring_buffer_1a979d04c2507c5cd0e3846cdea159b658" prot="private" virt="non-virtual"><scope>RingBuffer</scope><name>elems</name></member>
+      <member refid="class_ring_buffer_1ab5cd0599b8dd90fa811979a3eaaabb14" prot="private" virt="non-virtual"><scope>RingBuffer</scope><name>head</name></member>
+      <member refid="class_ring_buffer_1aad9eebd3dc4cc774666467de89c6de86" prot="public" virt="non-virtual"><scope>RingBuffer</scope><name>postRead</name></member>
+      <member refid="class_ring_buffer_1a7d2e2f6098053c51451ff2bd35fa2252" prot="public" virt="non-virtual"><scope>RingBuffer</scope><name>postWrite</name></member>
+      <member refid="class_ring_buffer_1a724ce39b381489539fda406e06596a1d" prot="public" virt="non-virtual"><scope>RingBuffer</scope><name>preRead</name></member>
+      <member refid="class_ring_buffer_1a60177190baecb3c438f8392d6f9a35f7" prot="public" virt="non-virtual"><scope>RingBuffer</scope><name>preWrite</name></member>
+      <member refid="class_ring_buffer_1af4ab31038d40a4075f4f23b7f2c970cd" prot="public" virt="non-virtual"><scope>RingBuffer</scope><name>read</name></member>
+      <member refid="class_ring_buffer_1a5f17853814de662a9f15a14fddfea4bf" prot="public" virt="non-virtual"><scope>RingBuffer</scope><name>readClear</name></member>
+      <member refid="class_ring_buffer_1a234232078f579680a091bc504b5eee5e" prot="public" virt="non-virtual"><scope>RingBuffer</scope><name>RingBuffer</name></member>
+      <member refid="class_ring_buffer_1a886e53095b694619c72975382a9a82f8" prot="private" virt="non-virtual"><scope>RingBuffer</scope><name>size</name></member>
+      <member refid="class_ring_buffer_1a326b08cba9aa9ebab0af051206b59acc" prot="private" virt="non-virtual"><scope>RingBuffer</scope><name>tail</name></member>
+      <member refid="class_ring_buffer_1a1a9e393325923ed035b16a5b067a3951" prot="public" virt="non-virtual"><scope>RingBuffer</scope><name>write</name></member>
+      <member refid="class_ring_buffer_1a2ea502f6493ca669f07f9f01a4a94bdb" prot="public" virt="non-virtual"><scope>RingBuffer</scope><name>~RingBuffer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

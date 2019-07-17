@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>BleSerialPeripheralRK</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><emphasis>Library to simplify using BLE UART peripheral mode on Gen 3 devices</emphasis></para><para><heading level="2">Introduction</heading>
+</para><para>Particle Gen 3 devices (Argon, Boron, Xenon) running Device OS 1.3.0-rc.1 and later have support for BLE (Bluetooth Low Entergy) in central and peripheral roles.</para><para>Nordic Semiconductor created a UART peripheral protocol to allow central devices (like mobile phones) to connect to a BLE device and read UART-like data streams. This is supported not only by the nRF Toolbox app, but also some other apps like the Adafruit Bluefruit app.</para><para>There is <ulink url="https://docs.particle.io/tutorials/device-os/bluetooth-le/#uart-peripheral">a code example in the docs</ulink>, however this class encapsulates the BLE stuff and makes a Serial-like interface to it. Among the benefits:</para><para><itemizedlist>
+<listitem><para>Reading is easy using standard functions like read(), readUntil(), readString(), etc. like you can from Serial, Serial1, etc..</para></listitem><listitem><para>Writing is easy and buffered, allowing not only write() to write a byte, but also all of the variations of print(), println(), printf(), printlnf(), etc. that are available when using Serial, etc..</para></listitem><listitem><para>All of the BLE stuff is encapsulated so you don&apos;t have to worry about it.</para></listitem></itemizedlist>
+</para><para><heading level="2">Example</heading>
+</para><para>There is one example in 1-simple-BleSerialPeripheralRK:</para><para><programlisting><codeline><highlight class="normal">#include<sp/>&quot;BleSerialPeripheralRK.h&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SerialLogHandler<sp/>logHandler;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SYSTEM_THREAD(ENABLED);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>First<sp/>parameter<sp/>is<sp/>the<sp/>transmit<sp/>buffer<sp/>size,<sp/>second<sp/>parameter<sp/>is<sp/>the<sp/>receive<sp/>buffer<sp/>size</highlight></codeline>
+<codeline><highlight class="normal">BleSerialPeripheralStatic&lt;32,<sp/>256&gt;<sp/>bleSerial;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">const<sp/>unsigned<sp/>long<sp/>TRANSMIT_PERIOD_MS<sp/>=<sp/>2000;</highlight></codeline>
+<codeline><highlight class="normal">unsigned<sp/>long<sp/>lastTransmit<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>counter<sp/>=<sp/>0;</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void<sp/>setup()<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Serial.begin();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>This<sp/>must<sp/>be<sp/>called<sp/>from<sp/>setup()!</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>bleSerial.setup();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>If<sp/>you<sp/>don&apos;t<sp/>have<sp/>any<sp/>other<sp/>services<sp/>to<sp/>advertise,<sp/>just<sp/>call<sp/>advertise().</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Otherwise,<sp/>call<sp/>getServiceUuid()<sp/>to<sp/>get<sp/>the<sp/>serial<sp/>service<sp/>UUID<sp/>and<sp/>add<sp/>that<sp/>to<sp/>your</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>custom<sp/>advertising<sp/>data<sp/>payload<sp/>and<sp/>call<sp/>BLE.advertise()<sp/>yourself<sp/>with<sp/>all<sp/>of<sp/>your<sp/>necessary</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>services<sp/>added.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>bleSerial.advertise();</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void<sp/>loop()<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>This<sp/>must<sp/>be<sp/>called<sp/>from<sp/>loop()<sp/>on<sp/>every<sp/>call<sp/>to<sp/>loop.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>bleSerial.loop();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Print<sp/>out<sp/>anything<sp/>we<sp/>receive</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if(bleSerial.available())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>String<sp/>s<sp/>=<sp/>bleSerial.readString();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.info(&quot;received:<sp/>%s&quot;,<sp/>s.c_str());</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(millis()<sp/>-<sp/>lastTransmit<sp/>&gt;=<sp/>TRANSMIT_PERIOD_MS)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lastTransmit<sp/>=<sp/>millis();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Every<sp/>two<sp/>seconds,<sp/>send<sp/>something<sp/>to<sp/>the<sp/>other<sp/>side</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bleSerial.printlnf(&quot;testing<sp/>%d&quot;,<sp/>++counter);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Log.info(&quot;counter=%d&quot;,<sp/>counter);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para><para>Among the important things:</para><para>You normally instantiate a <ref refid="class_ble_serial_peripheral_static" kindref="compound">BleSerialPeripheralStatic</ref> object as a global variable. The first number in the &lt;&gt; is the transmit buffer size and the second is the receive buffer size.</para><para><programlisting><codeline><highlight class="normal">//<sp/>First<sp/>parameter<sp/>is<sp/>the<sp/>transmit<sp/>buffer<sp/>size,<sp/>second<sp/>parameter<sp/>is<sp/>the<sp/>receive<sp/>buffer<sp/>size</highlight></codeline>
+<codeline><highlight class="normal">BleSerialPeripheralStatic&lt;256,<sp/>256&gt;<sp/>bleSerial;</highlight></codeline>
+</programlisting></para><para>Because the data is buffered and only sent from loop() the transmit buffer must be larger than the amount of data you intend to sent at once, or the maximum data that will accumulate between calls to loop.</para><para>Likewise, since data is read from loop but received asynchronously by BLE, you must have a receive buffer that is large enough to hold any data between times you will be processing it from your loop function.</para><para>If there is a data overflow situation, the data is discarded.</para><para>Be sure to call this from your setup() function.</para><para><programlisting><codeline><highlight class="normal">bleSerial.setup();</highlight></codeline>
+</programlisting></para><para>If you are only using BLE UART you can call:</para><para><programlisting><codeline><highlight class="normal">bleSerial.advertise();</highlight></codeline>
+</programlisting></para><para>If you are advertising multiple services, instead call <computeroutput>bleSerial.getServiceUuid()</computeroutput> to get the UART serial UUID and add it with your own services:</para><para><programlisting><codeline><highlight class="normal">BleAdvertisingData<sp/>data;</highlight></codeline>
+<codeline><highlight class="normal">data.appendServiceUUID(bleSerial.getServiceUuid());</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>append<sp/>your<sp/>own<sp/>service<sp/>UUIDs<sp/>here</highlight></codeline>
+<codeline><highlight class="normal">BLE.advertise(&amp;data);</highlight></codeline>
+</programlisting></para><para>Be sure to call this from loop, as often as possible.</para><para><programlisting><codeline><highlight class="normal">bleSerial.loop();</highlight></codeline>
+</programlisting></para><para>In this example we used <computeroutput>bleSerial.readString()</computeroutput> but there are many method of the <ref refid="class_stream" kindref="compound">Stream</ref> class to read. Beware of blocking, however. If you are waiting to read a string, you won&apos;t be calling <computeroutput>bleSerial.loop()</computeroutput> and data won&apos;t be transmitted during that time.</para><para>Finally, you can print to BLE serial using all of the standard <ref refid="class_stream" kindref="compound">Stream</ref> methods. The example uses <computeroutput>bleSerial.printlnf()</computeroutput> to print a line using <computeroutput>sprintf</computeroutput> formatting. </para>    </detaileddescription>
+  </compounddef>
+</doxygen>

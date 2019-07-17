@@ -1,0 +1,35 @@
+\hypertarget{class_ble_serial_peripheral_static}{}\section{Ble\+Serial\+Peripheral\+Static$<$ T\+X\+\_\+\+B\+U\+F\+\_\+\+S\+I\+ZE, R\+X\+\_\+\+B\+U\+F\+\_\+\+S\+I\+ZE $>$ Class Template Reference}
+\label{class_ble_serial_peripheral_static}\index{Ble\+Serial\+Peripheral\+Static$<$ T\+X\+\_\+\+B\+U\+F\+\_\+\+S\+I\+Z\+E, R\+X\+\_\+\+B\+U\+F\+\_\+\+S\+I\+Z\+E $>$@{Ble\+Serial\+Peripheral\+Static$<$ T\+X\+\_\+\+B\+U\+F\+\_\+\+S\+I\+Z\+E, R\+X\+\_\+\+B\+U\+F\+\_\+\+S\+I\+Z\+E $>$}}
+
+
+Ble\+Serial\+Peripheral with static buffers. This is the object you will normally create, as a global variable.  
+
+
+
+
+{\ttfamily \#include $<$Ble\+Serial\+Peripheral\+R\+K.\+h$>$}
+
+Inheritance diagram for Ble\+Serial\+Peripheral\+Static$<$ T\+X\+\_\+\+B\+U\+F\+\_\+\+S\+I\+ZE, R\+X\+\_\+\+B\+U\+F\+\_\+\+S\+I\+ZE $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_ble_serial_peripheral_static}
+\end{center}
+\end{figure}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$size\+\_\+t T\+X\+\_\+\+B\+U\+F\+\_\+\+S\+I\+ZE, size\+\_\+t R\+X\+\_\+\+B\+U\+F\+\_\+\+S\+I\+ZE$>$\newline
+class Ble\+Serial\+Peripheral\+Static$<$ T\+X\+\_\+\+B\+U\+F\+\_\+\+S\+I\+Z\+E, R\+X\+\_\+\+B\+U\+F\+\_\+\+S\+I\+Z\+E $>$}
+
+Ble\+Serial\+Peripheral with static buffers. This is the object you will normally create, as a global variable. 
+
+T\+X\+\_\+\+B\+U\+F\+\_\+\+S\+I\+ZE is the size of the tx\+Buf in bytes. Since data is bunched up and sent out from loop this must be larger than the largest chunk of data you ever intend to send.
+
+R\+X\+\_\+\+B\+U\+F\+\_\+\+S\+I\+ZE is the size of the rx\+Buf in bytes. Since data is received asynchronously, this must be larger than the most data you will receive and read in \mbox{\hyperlink{class_ble_serial_peripheral_base_a441dc005092891279967444cb2dc2ff2}{loop()}}.
+
+You can only have one \mbox{\hyperlink{class_ble_serial_peripheral_static}{Ble\+Serial\+Peripheral\+Static}} or \mbox{\hyperlink{class_ble_serial_peripheral_base}{Ble\+Serial\+Peripheral\+Base}} object per device! 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/Ble\+Serial\+Peripheral\+R\+K.\+h\end{DoxyCompactItemize}

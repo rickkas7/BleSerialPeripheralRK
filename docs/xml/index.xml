@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.14">
+  <compound refid="class_ble_serial_peripheral_base" kind="class"><name>BleSerialPeripheralBase</name>
+    <member refid="class_ble_serial_peripheral_base_1a8cbd498c449f3c6c5d4cb3ff1b43db20" kind="variable"><name>txBuf</name></member>
+    <member refid="class_ble_serial_peripheral_base_1a9923e255f6550f80df3f15fbfe8cf573" kind="variable"><name>txBufSize</name></member>
+    <member refid="class_ble_serial_peripheral_base_1aef5e834f8653a624b1004670aa01f458" kind="variable"><name>txCharacteristic</name></member>
+    <member refid="class_ble_serial_peripheral_base_1ab2c5399569ecc3f23fd9f5c6d3793ac6" kind="variable"><name>rxCharacteristic</name></member>
+    <member refid="class_ble_serial_peripheral_base_1aa7dae11f0fce6c2d64f77c3d0e9f5130" kind="variable"><name>mutex</name></member>
+    <member refid="class_ble_serial_peripheral_base_1a8daa928822446753ec6414034efb8372" kind="variable"><name>rxRing</name></member>
+    <member refid="class_ble_serial_peripheral_base_1aed85b33a9cf92d6e17c469cc0e7458b8" kind="variable"><name>rxLost</name></member>
+    <member refid="class_ble_serial_peripheral_base_1ab874b2b274861bc787a5ea6508a16620" kind="variable"><name>txLost</name></member>
+    <member refid="class_ble_serial_peripheral_base_1ae9ba73bea8887d2287ab09897e9d48f8" kind="variable"><name>txCur</name></member>
+    <member refid="class_ble_serial_peripheral_base_1ad7b212124dccffa008d21b37bc22449a" kind="variable"><name>txMaxWrite</name></member>
+    <member refid="class_ble_serial_peripheral_base_1a1c1811adb8b03e7c0cb6e5f6c0a42fab" kind="function"><name>BleSerialPeripheralBase</name></member>
+    <member refid="class_ble_serial_peripheral_base_1ab693dd8a00b3af5ed375d68647bb4712" kind="function"><name>~BleSerialPeripheralBase</name></member>
+    <member refid="class_ble_serial_peripheral_base_1a01072243aecf86ea5030019a6e900fbb" kind="function"><name>setup</name></member>
+    <member refid="class_ble_serial_peripheral_base_1a441dc005092891279967444cb2dc2ff2" kind="function"><name>loop</name></member>
+    <member refid="class_ble_serial_peripheral_base_1a870258aa62e285cc0e2717476ae51145" kind="function"><name>advertise</name></member>
+    <member refid="class_ble_serial_peripheral_base_1a0457f2495023d47468a2f5b1964c0233" kind="function"><name>getServiceUuid</name></member>
+    <member refid="class_ble_serial_peripheral_base_1a4dac5d6f8efb72b1df255e942a054560" kind="function"><name>lock</name></member>
+    <member refid="class_ble_serial_peripheral_base_1ab6c9183c6e2d42babe005b222b984d03" kind="function"><name>unlock</name></member>
+    <member refid="class_ble_serial_peripheral_base_1a946cc56677f03db99de9409851427941" kind="function"><name>available</name></member>
+    <member refid="class_ble_serial_peripheral_base_1a4933bc35d89028134597b46315806ce4" kind="function"><name>read</name></member>
+    <member refid="class_ble_serial_peripheral_base_1a6ba8319f3b1a69c96c4e8b3f8dde5bbc" kind="function"><name>peek</name></member>
+    <member refid="class_ble_serial_peripheral_base_1a27e43dcfd3cb2edee33b19ba9017ad7f" kind="function"><name>flush</name></member>
+    <member refid="class_ble_serial_peripheral_base_1ac041322685f26d921f60d01a2ed99e83" kind="function"><name>write</name></member>
+    <member refid="class_ble_serial_peripheral_base_1a97cee829a39ff3a62e3108f05fba64d8" kind="function"><name>getRxLost</name></member>
+    <member refid="class_ble_serial_peripheral_base_1af2dc5ee170da6783176ce6c96456fdb4" kind="function"><name>clearRxLost</name></member>
+    <member refid="class_ble_serial_peripheral_base_1a09c779ad7767bc195687c525548127d9" kind="function"><name>getTxLost</name></member>
+    <member refid="class_ble_serial_peripheral_base_1a3f7273afa5985d6df935b530d9550b6c" kind="function"><name>clearTxLost</name></member>
+    <member refid="class_ble_serial_peripheral_base_1aa4ca5408c166841e1fd5ea9aa3a1c4a5" kind="function"><name>getTxMaxWrite</name></member>
+    <member refid="class_ble_serial_peripheral_base_1a454bb53617c96d564f3e20d13765de9f" kind="function"><name>setTxMaxWrite</name></member>
+    <member refid="class_ble_serial_peripheral_base_1a2271cfcdb1170bbae2e27a091084b4cc" kind="function"><name>onDataReceived</name></member>
+    <member refid="class_ble_serial_peripheral_base_1a5723e9bfc86d7debcf7e3e1498ef1bc2" kind="function"><name>onDataReceivedStatic</name></member>
+  </compound>
+  <compound refid="class_ble_serial_peripheral_lock" kind="class"><name>BleSerialPeripheralLock</name>
+    <member refid="class_ble_serial_peripheral_lock_1a770b9c16380ab8da597a4e229d28c3a7" kind="variable"><name>parent</name></member>
+    <member refid="class_ble_serial_peripheral_lock_1af087b1f0c3a1ec5f0717bea4f9ab297a" kind="function"><name>BleSerialPeripheralLock</name></member>
+    <member refid="class_ble_serial_peripheral_lock_1a7557d83658953822f885ab4ab72ec1fc" kind="function"><name>~BleSerialPeripheralLock</name></member>
+  </compound>
+  <compound refid="class_ble_serial_peripheral_static" kind="class"><name>BleSerialPeripheralStatic</name>
+    <member refid="class_ble_serial_peripheral_static_1ad6a9a465b7792a4100c58e454470184a" kind="variable"><name>txBufStatic</name></member>
+    <member refid="class_ble_serial_peripheral_static_1a205f6db896b66171e62ade9eb52a92ee" kind="variable"><name>rxBufStatic</name></member>
+    <member refid="class_ble_serial_peripheral_static_1a5ce783c0ebcee852e4cf0541f5167105" kind="function"><name>BleSerialPeripheralStatic</name></member>
+  </compound>
+  <compound refid="class_print" kind="class"><name>Print</name>
+    <member refid="class_print_1ae922182b62afa3b8434397b7a54e70c4" kind="variable"><name>write_error</name></member>
+    <member refid="class_print_1abe7ee1c0946399820a61e1ec39419ee2" kind="function"><name>printNumber</name></member>
+    <member refid="class_print_1a449fd5f2ab1fb43c3e3b10f53d18b1e8" kind="function"><name>printFloat</name></member>
+    <member refid="class_print_1a88a4a829fb5d589efb43955ad0cbddcc" kind="function"><name>getWriteError</name></member>
+    <member refid="class_print_1aec9ecf84cc6d9087a650def3cefc459e" kind="function"><name>clearWriteError</name></member>
+    <member refid="class_print_1ab9195b97274029f693aaddce6c7a0021" kind="function"><name>write</name></member>
+    <member refid="class_print_1a5b40e0e9cab1f2fe5bb0cb22ffe5adda" kind="function"><name>write</name></member>
+    <member refid="class_print_1a88864e109589a5be9b0f5ba1327f8421" kind="function"><name>write</name></member>
+    <member refid="class_print_1acfe80773011eb17dfb52c2fba517a093" kind="function"><name>print</name></member>
+    <member refid="class_print_1a1e411d07a8ffec5faf7ce485bac0f029" kind="function"><name>print</name></member>
+    <member refid="class_print_1ae35481e77567618140cd58d8b96d3747" kind="function"><name>print</name></member>
+    <member refid="class_print_1aa28ddbde83b14df73b41c919ecc4478f" kind="function"><name>print</name></member>
+    <member refid="class_print_1afcd7d3a184df961a502643e4fb638c52" kind="function"><name>print</name></member>
+    <member refid="class_print_1a0c663ac015ebc037ea044ba2e2cf2947" kind="function"><name>print</name></member>
+    <member refid="class_print_1acb8c6dcd4339b024436002aa9a6f4be2" kind="function"><name>print</name></member>
+    <member refid="class_print_1ad89472bdb6539423a42d350beec02ff4" kind="function"><name>print</name></member>
+    <member refid="class_print_1a901b0f06ae34aab31b8fbb4298f0596e" kind="function"><name>print</name></member>
+    <member refid="class_print_1ad337ce3f7977411b7d34d47a51e5737e" kind="function"><name>println</name></member>
+    <member refid="class_print_1a80fdd92db4b396062586bcb3e08d3835" kind="function"><name>println</name></member>
+    <member refid="class_print_1a000b3fd5b723cb6c7db0d3231a9ef2f8" kind="function"><name>println</name></member>
+    <member refid="class_print_1a82aa91bbd859f28a0a3b4869e5bfcadd" kind="function"><name>println</name></member>
+    <member refid="class_print_1a2608232c1f10f654111ff447de16d60b" kind="function"><name>println</name></member>
+    <member refid="class_print_1a82bbe59b28440c29e55ff3597eb45376" kind="function"><name>println</name></member>
+    <member refid="class_print_1afa936d7e8dd329d9162f2cd28f42681e" kind="function"><name>println</name></member>
+    <member refid="class_print_1a178b90baf9f74f0945f5c64aafec59ea" kind="function"><name>println</name></member>
+    <member refid="class_print_1a20f9e104153b62e720c9b4c348b44f00" kind="function"><name>println</name></member>
+    <member refid="class_print_1a169b128f9e22f0c15883768f580541a2" kind="function"><name>println</name></member>
+    <member refid="class_print_1a08a461c9fee5fd8f5795d6e9f61e3d5b" kind="function"><name>printf</name></member>
+    <member refid="class_print_1afa41aa5211c54b7b4d79b9286880c337" kind="function"><name>printlnf</name></member>
+  </compound>
+  <compound refid="class_ring_buffer" kind="class"><name>RingBuffer</name>
+    <member refid="class_ring_buffer_1a979d04c2507c5cd0e3846cdea159b658" kind="variable"><name>elems</name></member>
+    <member refid="class_ring_buffer_1a886e53095b694619c72975382a9a82f8" kind="variable"><name>size</name></member>
+    <member refid="class_ring_buffer_1ab5cd0599b8dd90fa811979a3eaaabb14" kind="variable"><name>head</name></member>
+    <member refid="class_ring_buffer_1a326b08cba9aa9ebab0af051206b59acc" kind="variable"><name>tail</name></member>
+    <member refid="class_ring_buffer_1a234232078f579680a091bc504b5eee5e" kind="function"><name>RingBuffer</name></member>
+    <member refid="class_ring_buffer_1a2ea502f6493ca669f07f9f01a4a94bdb" kind="function"><name>~RingBuffer</name></member>
+    <member refid="class_ring_buffer_1a2d77169348cd228b343ba2245e1ce371" kind="function"><name>availableForRead</name></member>
+    <member refid="class_ring_buffer_1a724ce39b381489539fda406e06596a1d" kind="function"><name>preRead</name></member>
+    <member refid="class_ring_buffer_1aad9eebd3dc4cc774666467de89c6de86" kind="function"><name>postRead</name></member>
+    <member refid="class_ring_buffer_1af4ab31038d40a4075f4f23b7f2c970cd" kind="function"><name>read</name></member>
+    <member refid="class_ring_buffer_1a5f17853814de662a9f15a14fddfea4bf" kind="function"><name>readClear</name></member>
+    <member refid="class_ring_buffer_1a60177190baecb3c438f8392d6f9a35f7" kind="function"><name>preWrite</name></member>
+    <member refid="class_ring_buffer_1a7d2e2f6098053c51451ff2bd35fa2252" kind="function"><name>postWrite</name></member>
+    <member refid="class_ring_buffer_1a1a9e393325923ed035b16a5b067a3951" kind="function"><name>write</name></member>
+  </compound>
+  <compound refid="class_stream" kind="class"><name>Stream</name>
+    <member refid="class_stream_1a9c98a763395005c08ce95afb2f06c7b1" kind="function"><name>available</name></member>
+    <member refid="class_stream_1aea5dee9fcb038148515b7c9212d38dc0" kind="function"><name>read</name></member>
+    <member refid="class_stream_1a30c3c212ec6ea67277a708c5ea2501a5" kind="function"><name>peek</name></member>
+    <member refid="class_stream_1aa3ef2c34f152a0b2ea8de9139b9461da" kind="function"><name>flush</name></member>
+    <member refid="class_stream_1abaa50647d6dbb3baf7697a2691a06177" kind="function"><name>setTimeout</name></member>
+    <member refid="class_stream_1a4bab30ccd324efd461dee46a2339f673" kind="function"><name>find</name></member>
+    <member refid="class_stream_1ad851401f2318cdb1de05707e021b81d9" kind="function"><name>find</name></member>
+    <member refid="class_stream_1ad1f5f6600832396fb38a897baf4de35b" kind="function"><name>findUntil</name></member>
+    <member refid="class_stream_1a3a9497de614792103ab8cb4759e01a69" kind="function"><name>findUntil</name></member>
+    <member refid="class_stream_1a497ffcbcb4d5bb889a8fde487bcc1b98" kind="function"><name>parseInt</name></member>
+    <member refid="class_stream_1a5e5a0cc11eb586d89dcb7fa8e53a87e8" kind="function"><name>parseFloat</name></member>
+    <member refid="class_stream_1a45fd1336a323ea83b16e8507055f44ea" kind="function"><name>readBytes</name></member>
+    <member refid="class_stream_1af84672a4fb2620466958d3118d4fea00" kind="function"><name>readBytesUntil</name></member>
+    <member refid="class_stream_1a1c60bdda2b65d78e5a1362d51b856c5a" kind="function"><name>readString</name></member>
+    <member refid="class_stream_1a6a409da87c552909260d8cc428c5ca70" kind="function"><name>readStringUntil</name></member>
+  </compound>
+  <compound refid="spark__wiring__print_8h" kind="file"><name>spark_wiring_print.h</name>
+    <member refid="spark__wiring__print_8h_1a31cf2682ae26587a3c76b612b6d05337" kind="define"><name>__SPARK_WIRING_PRINT_</name></member>
+    <member refid="spark__wiring__print_8h_1a26e216c38cffa0a9965fa7933ba558b1" kind="variable"><name>DEC</name></member>
+    <member refid="spark__wiring__print_8h_1a777726851dda95dabcc50f606e2dfd8e" kind="variable"><name>HEX</name></member>
+    <member refid="spark__wiring__print_8h_1aeea5c9efade0b29d08f3b5b8336425ad" kind="variable"><name>OCT</name></member>
+    <member refid="spark__wiring__print_8h_1aee179d58d1b76a9b42397af886f2f9a4" kind="variable"><name>BIN</name></member>
+  </compound>
+  <compound refid="spark__wiring__stream_8h" kind="file"><name>spark_wiring_stream.h</name>
+  </compound>
+  <compound refid="_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
+  </compound>
+  <compound refid="_ble_serial_peripheral_r_k_8cpp" kind="file"><name>BleSerialPeripheralRK.cpp</name>
+    <member refid="_ble_serial_peripheral_r_k_8cpp_1a05e63d28a7319573e05acedc61e03152" kind="define"><name>LOG_DEBUG</name></member>
+    <member refid="_ble_serial_peripheral_r_k_8cpp_1a32e06ef4423569878dedb2b16e4597d5" kind="function"><name>serviceUuid</name></member>
+    <member refid="_ble_serial_peripheral_r_k_8cpp_1afcd14a37ed4deff847879ade81b91795" kind="function"><name>rxUuid</name></member>
+    <member refid="_ble_serial_peripheral_r_k_8cpp_1aaef755f1df257d1ec6199c3c90cf333e" kind="function"><name>txUuid</name></member>
+  </compound>
+  <compound refid="_ble_serial_peripheral_r_k_8h" kind="file"><name>BleSerialPeripheralRK.h</name>
+  </compound>
+  <compound refid="_ring_buffer_8h" kind="file"><name>RingBuffer.h</name>
+  </compound>
+  <compound refid="dir_49e56c817e5e54854c35e136979f97ca" kind="dir"><name>docs</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  </compound>
+  <compound refid="dir_248832ff8517b5b7d5da1a6bc8750d99" kind="dir"><name>docs/src</name>
+  </compound>
+  <compound refid="indexpage" kind="page"><name>index</name>
+  </compound>
+</doxygenindex>

@@ -1,0 +1,643 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_ble_serial_peripheral_base" kind="class" language="C++" prot="public">
+    <compoundname>BleSerialPeripheralBase</compoundname>
+    <basecompoundref refid="class_stream" prot="public" virt="non-virtual">Stream</basecompoundref>
+    <derivedcompoundref refid="class_ble_serial_peripheral_static" prot="public" virt="non-virtual">BleSerialPeripheralStatic&lt; TX_BUF_SIZE, RX_BUF_SIZE &gt;</derivedcompoundref>
+    <includes refid="_ble_serial_peripheral_r_k_8h" local="no">BleSerialPeripheralRK.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_ble_serial_peripheral_base_1a8cbd498c449f3c6c5d4cb3ff1b43db20" prot="private" static="no" mutable="no">
+        <type>uint8_t *</type>
+        <definition>uint8_t* BleSerialPeripheralBase::txBuf</definition>
+        <argsstring></argsstring>
+        <name>txBuf</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="174" column="1" bodyfile="src/BleSerialPeripheralRK.h" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ble_serial_peripheral_base_1a9923e255f6550f80df3f15fbfe8cf573" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t BleSerialPeripheralBase::txBufSize</definition>
+        <argsstring></argsstring>
+        <name>txBufSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="175" column="1" bodyfile="src/BleSerialPeripheralRK.h" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ble_serial_peripheral_base_1aef5e834f8653a624b1004670aa01f458" prot="private" static="no" mutable="no">
+        <type>BleCharacteristic</type>
+        <definition>BleCharacteristic BleSerialPeripheralBase::txCharacteristic</definition>
+        <argsstring></argsstring>
+        <name>txCharacteristic</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="177" column="1" bodyfile="src/BleSerialPeripheralRK.h" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ble_serial_peripheral_base_1ab2c5399569ecc3f23fd9f5c6d3793ac6" prot="private" static="no" mutable="no">
+        <type>BleCharacteristic</type>
+        <definition>BleCharacteristic BleSerialPeripheralBase::rxCharacteristic</definition>
+        <argsstring></argsstring>
+        <name>rxCharacteristic</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="178" column="1" bodyfile="src/BleSerialPeripheralRK.h" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ble_serial_peripheral_base_1aa7dae11f0fce6c2d64f77c3d0e9f5130" prot="private" static="no" mutable="no">
+        <type>os_mutex_t</type>
+        <definition>os_mutex_t BleSerialPeripheralBase::mutex</definition>
+        <argsstring></argsstring>
+        <name>mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="180" column="1" bodyfile="src/BleSerialPeripheralRK.h" bodystart="180" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ble_serial_peripheral_base_1a8daa928822446753ec6414034efb8372" prot="private" static="no" mutable="no">
+        <type><ref refid="class_ring_buffer" kindref="compound">RingBuffer</ref>&lt; uint8_t &gt;</type>
+        <definition>RingBuffer&lt;uint8_t&gt; BleSerialPeripheralBase::rxRing</definition>
+        <argsstring></argsstring>
+        <name>rxRing</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="181" column="1" bodyfile="src/BleSerialPeripheralRK.h" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ble_serial_peripheral_base_1aed85b33a9cf92d6e17c469cc0e7458b8" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t BleSerialPeripheralBase::rxLost</definition>
+        <argsstring></argsstring>
+        <name>rxLost</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="183" column="1" bodyfile="src/BleSerialPeripheralRK.h" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ble_serial_peripheral_base_1ab874b2b274861bc787a5ea6508a16620" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t BleSerialPeripheralBase::txLost</definition>
+        <argsstring></argsstring>
+        <name>txLost</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="184" column="1" bodyfile="src/BleSerialPeripheralRK.h" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ble_serial_peripheral_base_1ae9ba73bea8887d2287ab09897e9d48f8" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t BleSerialPeripheralBase::txCur</definition>
+        <argsstring></argsstring>
+        <name>txCur</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="185" column="1" bodyfile="src/BleSerialPeripheralRK.h" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_ble_serial_peripheral_base_1ad7b212124dccffa008d21b37bc22449a" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t BleSerialPeripheralBase::txMaxWrite</definition>
+        <argsstring></argsstring>
+        <name>txMaxWrite</name>
+        <initializer>= 236</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="187" column="1" bodyfile="src/BleSerialPeripheralRK.h" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_ble_serial_peripheral_base_1a1c1811adb8b03e7c0cb6e5f6c0a42fab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BleSerialPeripheralBase::BleSerialPeripheralBase</definition>
+        <argsstring>(uint8_t *txBuf, size_t txBufSize, uint8_t *rxBuf, size_t rxBufSize)</argsstring>
+        <name>BleSerialPeripheralBase</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>txBuf</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>txBufSize</declname>
+        </param>
+        <param>
+          <type>uint8_t *</type>
+          <declname>rxBuf</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>rxBufSize</declname>
+        </param>
+        <briefdescription>
+<para>Construct an object with passed-in buffers. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>txBuf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to buffer for tx (this device to the other device) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>txBufSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of the buffer in bytes </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rxBuf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the buffer for rx (the other device to this device) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>rxBufSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of the buffer in bytes</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+Normally you&apos;d use <ref refid="class_ble_serial_peripheral_static" kindref="compound">BleSerialPeripheralStatic</ref> as a global variable, but in unusual cases you can construct the object with this constructor and pass in the buffers to use. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="30" column="1" bodyfile="src/BleSerialPeripheralRK.cpp" bodystart="15" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ble_serial_peripheral_base_1ab693dd8a00b3af5ed375d68647bb4712" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>BleSerialPeripheralBase::~BleSerialPeripheralBase</definition>
+        <argsstring>()</argsstring>
+        <name>~BleSerialPeripheralBase</name>
+        <briefdescription>
+<para>Destructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>You normally instantiate this object as a global variable so you won&apos;t be deleting it. The buffers you passed in are not freed! </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="38" column="1" bodyfile="src/BleSerialPeripheralRK.cpp" bodystart="24" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ble_serial_peripheral_base_1a01072243aecf86ea5030019a6e900fbb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BleSerialPeripheralBase::setup</definition>
+        <argsstring>()</argsstring>
+        <name>setup</name>
+        <briefdescription>
+<para>You must call this from <ref refid="class_ble_serial_peripheral_base_1a01072243aecf86ea5030019a6e900fbb" kindref="member">setup()</ref> to initialize the object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="43" column="1" bodyfile="src/BleSerialPeripheralRK.cpp" bodystart="28" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ble_serial_peripheral_base_1a441dc005092891279967444cb2dc2ff2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BleSerialPeripheralBase::loop</definition>
+        <argsstring>()</argsstring>
+        <name>loop</name>
+        <briefdescription>
+<para>You must call this from <ref refid="class_ble_serial_peripheral_base_1a441dc005092891279967444cb2dc2ff2" kindref="member">loop()</ref> to process outgoing data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="48" column="1" bodyfile="src/BleSerialPeripheralRK.cpp" bodystart="37" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ble_serial_peripheral_base_1a870258aa62e285cc0e2717476ae51145" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BleSerialPeripheralBase::advertise</definition>
+        <argsstring>()</argsstring>
+        <name>advertise</name>
+        <briefdescription>
+<para>Call this to advertise the BLE UART service. </para>        </briefdescription>
+        <detaileddescription>
+<para>If you have multiple services you want to advertise, instead of calling this method use <ref refid="class_ble_serial_peripheral_base_1a0457f2495023d47468a2f5b1964c0233" kindref="member">getServiceUuid()</ref> to get the UUID of the UART service and add it to your advertising data. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="57" column="1" bodyfile="src/BleSerialPeripheralRK.cpp" bodystart="60" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ble_serial_peripheral_base_1a0457f2495023d47468a2f5b1964c0233" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>BleUuid</type>
+        <definition>BleUuid BleSerialPeripheralBase::getServiceUuid</definition>
+        <argsstring>() const</argsstring>
+        <name>getServiceUuid</name>
+        <briefdescription>
+<para>Get the service UUID for the UART service. </para>        </briefdescription>
+        <detaileddescription>
+<para>This is used if you advertise multiple services. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="64" column="1" bodyfile="src/BleSerialPeripheralRK.cpp" bodystart="67" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ble_serial_peripheral_base_1a4dac5d6f8efb72b1df255e942a054560" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BleSerialPeripheralBase::lock</definition>
+        <argsstring>()</argsstring>
+        <name>lock</name>
+        <briefdescription>
+<para>Obtain a mutex lock on the TX buffer. </para>        </briefdescription>
+        <detaileddescription>
+<para>This is used internally, you should not normally need to call this. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="71" column="1" bodyfile="src/BleSerialPeripheralRK.cpp" bodystart="71" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ble_serial_peripheral_base_1ab6c9183c6e2d42babe005b222b984d03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BleSerialPeripheralBase::unlock</definition>
+        <argsstring>()</argsstring>
+        <name>unlock</name>
+        <briefdescription>
+<para>Release the mutex lock on the TX buffer. </para>        </briefdescription>
+        <detaileddescription>
+<para>This is used internally, you should not normally need to call this. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="78" column="1" bodyfile="src/BleSerialPeripheralRK.cpp" bodystart="75" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ble_serial_peripheral_base_1a946cc56677f03db99de9409851427941" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int BleSerialPeripheralBase::available</definition>
+        <argsstring>()</argsstring>
+        <name>available</name>
+        <reimplements refid="class_stream_1a9c98a763395005c08ce95afb2f06c7b1">available</reimplements>
+        <briefdescription>
+<para>Override for <ref refid="class_stream" kindref="compound">Stream</ref> class, returns the number of bytes that can be read right now. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="83" column="1" bodyfile="src/BleSerialPeripheralRK.cpp" bodystart="79" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ble_serial_peripheral_base_1a4933bc35d89028134597b46315806ce4" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int BleSerialPeripheralBase::read</definition>
+        <argsstring>()</argsstring>
+        <name>read</name>
+        <reimplements refid="class_stream_1aea5dee9fcb038148515b7c9212d38dc0">read</reimplements>
+        <briefdescription>
+<para>Override for the <ref refid="class_stream" kindref="compound">Stream</ref> class, reads a byte of data from the input ring buffer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="88" column="1" bodyfile="src/BleSerialPeripheralRK.cpp" bodystart="82" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ble_serial_peripheral_base_1a6ba8319f3b1a69c96c4e8b3f8dde5bbc" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int BleSerialPeripheralBase::peek</definition>
+        <argsstring>()</argsstring>
+        <name>peek</name>
+        <reimplements refid="class_stream_1a30c3c212ec6ea67277a708c5ea2501a5">peek</reimplements>
+        <briefdescription>
+<para>Override for the <ref refid="class_stream" kindref="compound">Stream</ref> class, reads a byte of data, but leaves it in the buffer so <ref refid="class_ble_serial_peripheral_base_1a4933bc35d89028134597b46315806ce4" kindref="member">read()</ref> will get the same byte of data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="94" column="1" bodyfile="src/BleSerialPeripheralRK.cpp" bodystart="92" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ble_serial_peripheral_base_1a27e43dcfd3cb2edee33b19ba9017ad7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void BleSerialPeripheralBase::flush</definition>
+        <argsstring>()</argsstring>
+        <name>flush</name>
+        <reimplements refid="class_stream_1aa3ef2c34f152a0b2ea8de9139b9461da">flush</reimplements>
+        <briefdescription>
+<para>Override for the <ref refid="class_stream" kindref="compound">Stream</ref> class. Currently does nothing. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="99" column="1" bodyfile="src/BleSerialPeripheralRK.cpp" bodystart="104" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ble_serial_peripheral_base_1ac041322685f26d921f60d01a2ed99e83" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>size_t</type>
+        <definition>size_t BleSerialPeripheralBase::write</definition>
+        <argsstring>(uint8_t data)</argsstring>
+        <name>write</name>
+        <reimplements refid="class_print_1ab9195b97274029f693aaddce6c7a0021">write</reimplements>
+        <param>
+          <type>uint8_t</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Virtual override from the <ref refid="class_print" kindref="compound">Print</ref> class. Writes a byte of data. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The byte to write </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1 if successful or -1 on failure</para></simplesect>
+Note that writes are accumulated in the txBuf, then sent out in bunches from the loop thread. If you overflow the txBuf, then the data is discarded and -1 is returned. The txLost counter is incremented as well. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="111" column="1" bodyfile="src/BleSerialPeripheralRK.cpp" bodystart="108" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ble_serial_peripheral_base_1a97cee829a39ff3a62e3108f05fba64d8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t BleSerialPeripheralBase::getRxLost</definition>
+        <argsstring>() const</argsstring>
+        <name>getRxLost</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the number of receive bytes lost because the receive buffer was full.</para><para>Data is received asynchronously by BLE. If you do not empty the data from loop fast enough or use too small of a buffer, the data will be lost. The rxLost counter is the number of bytes that have been lost. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="120" column="1" bodyfile="src/BleSerialPeripheralRK.h" bodystart="120" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ble_serial_peripheral_base_1af2dc5ee170da6783176ce6c96456fdb4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void BleSerialPeripheralBase::clearRxLost</definition>
+        <argsstring>()</argsstring>
+        <name>clearRxLost</name>
+        <briefdescription>
+<para>Clears the rxLost counter. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="125" column="1" bodyfile="src/BleSerialPeripheralRK.h" bodystart="125" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ble_serial_peripheral_base_1a09c779ad7767bc195687c525548127d9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t BleSerialPeripheralBase::getTxLost</definition>
+        <argsstring>() const</argsstring>
+        <name>getTxLost</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the number of transmit bytes lost because the transmit buffer was full.</para><para>Data can be written from other threads and is buffered in the txBuf. During <ref refid="class_ble_serial_peripheral_base_1a441dc005092891279967444cb2dc2ff2" kindref="member">loop()</ref>, the data is sent (in chunks up to txMaxWrite bytes). If you write more data than can fit in the txBuf, then the data is lost and the txLost counter is incremented. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="134" column="1" bodyfile="src/BleSerialPeripheralRK.h" bodystart="134" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ble_serial_peripheral_base_1a3f7273afa5985d6df935b530d9550b6c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void BleSerialPeripheralBase::clearTxLost</definition>
+        <argsstring>()</argsstring>
+        <name>clearTxLost</name>
+        <briefdescription>
+<para>Clears the txLost counter. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="139" column="1" bodyfile="src/BleSerialPeripheralRK.h" bodystart="139" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ble_serial_peripheral_base_1aa4ca5408c166841e1fd5ea9aa3a1c4a5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t BleSerialPeripheralBase::getTxMaxWrite</definition>
+        <argsstring>() const</argsstring>
+        <name>getTxMaxWrite</name>
+        <briefdescription>
+<para>Get the maximum chunk size to send. The default is 236 bytes. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="144" column="1" bodyfile="src/BleSerialPeripheralRK.h" bodystart="144" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="class_ble_serial_peripheral_base_1a454bb53617c96d564f3e20d13765de9f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void BleSerialPeripheralBase::setTxMaxWrite</definition>
+        <argsstring>(size_t value)</argsstring>
+        <name>setTxMaxWrite</name>
+        <param>
+          <type>size_t</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Set the maximum chunk size to send. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value in bytes to set.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+It set larger than 244, any data larger than that will be silently discarded. If your BLE central implementation does not want that much data at once, set it lower.</para><para>Note that during loop all of the outstanding data up to txMaxWrite bytes will be sent. If there are fewer than txMaxWrite byte then the smaller amount of data will be sent; it does not wait around for more data.</para><para>Even if you write multiple small writes using <ref refid="class_ble_serial_peripheral_base_1ac041322685f26d921f60d01a2ed99e83" kindref="member">write()</ref> or <ref refid="class_print_1acfe80773011eb17dfb52c2fba517a093" kindref="member">print()</ref> methods they will be bunched up into more efficient larger writes. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="161" column="1" bodyfile="src/BleSerialPeripheralRK.h" bodystart="161" bodyend="161"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_ble_serial_peripheral_base_1a2271cfcdb1170bbae2e27a091084b4cc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BleSerialPeripheralBase::onDataReceived</definition>
+        <argsstring>(const uint8_t *data, size_t len, const BlePeerDevice &amp;peer)</argsstring>
+        <name>onDataReceived</name>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <param>
+          <type>const BlePeerDevice &amp;</type>
+          <declname>peer</declname>
+        </param>
+        <briefdescription>
+<para>Called when data is received by BLE and stores it in the rxRing. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="167" column="1" bodyfile="src/BleSerialPeripheralRK.cpp" bodystart="123" bodyend="134"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_ble_serial_peripheral_base_1a5723e9bfc86d7debcf7e3e1498ef1bc2" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BleSerialPeripheralBase::onDataReceivedStatic</definition>
+        <argsstring>(const uint8_t *data, size_t len, const BlePeerDevice &amp;peer, void *context)</argsstring>
+        <name>onDataReceivedStatic</name>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <param>
+          <type>const BlePeerDevice &amp;</type>
+          <declname>peer</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>context</declname>
+        </param>
+        <briefdescription>
+<para>Static callback function passed to BLE. Note: context must be &quot;this&quot;! </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/BleSerialPeripheralRK.h" line="172" column="1" bodyfile="src/BleSerialPeripheralRK.cpp" bodystart="137" bodyend="141"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Main class for BLE UART funtionality. </para>    </briefdescription>
+    <detaileddescription>
+<para>Normally you&apos;ll instantiate a <ref refid="class_ble_serial_peripheral_static" kindref="compound">BleSerialPeripheralStatic</ref> as a global variable instead of using this class.</para><para>You can only have one instance of this object per device!</para><para>Note: This method subclasses <ref refid="class_stream" kindref="compound">Stream</ref>. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>BleSerialPeripheralStatic&lt; TX_BUF_SIZE, RX_BUF_SIZE &gt;</label>
+        <link refid="class_ble_serial_peripheral_static"/>
+        <childnode refid="0" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Print</label>
+        <link refid="class_print"/>
+      </node>
+      <node id="0">
+        <label>BleSerialPeripheralBase</label>
+        <link refid="class_ble_serial_peripheral_base"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Stream</label>
+        <link refid="class_stream"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="6">
+        <label>Print</label>
+        <link refid="class_print"/>
+      </node>
+      <node id="4">
+        <label>BleSerialPeripheralBase</label>
+        <link refid="class_ble_serial_peripheral_base"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Stream</label>
+        <link refid="class_stream"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/BleSerialPeripheralRK.h" line="17" column="1" bodyfile="src/BleSerialPeripheralRK.h" bodystart="17" bodyend="188"/>
+    <listofallmembers>
+      <member refid="class_ble_serial_peripheral_base_1a870258aa62e285cc0e2717476ae51145" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>advertise</name></member>
+      <member refid="class_ble_serial_peripheral_base_1a946cc56677f03db99de9409851427941" prot="public" virt="virtual"><scope>BleSerialPeripheralBase</scope><name>available</name></member>
+      <member refid="class_ble_serial_peripheral_base_1a1c1811adb8b03e7c0cb6e5f6c0a42fab" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>BleSerialPeripheralBase</name></member>
+      <member refid="class_ble_serial_peripheral_base_1af2dc5ee170da6783176ce6c96456fdb4" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>clearRxLost</name></member>
+      <member refid="class_ble_serial_peripheral_base_1a3f7273afa5985d6df935b530d9550b6c" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>clearTxLost</name></member>
+      <member refid="class_print_1aec9ecf84cc6d9087a650def3cefc459e" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>clearWriteError</name></member>
+      <member refid="class_stream_1a4bab30ccd324efd461dee46a2339f673" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>find</name></member>
+      <member refid="class_stream_1ad851401f2318cdb1de05707e021b81d9" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>find</name></member>
+      <member refid="class_stream_1ad1f5f6600832396fb38a897baf4de35b" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>findUntil</name></member>
+      <member refid="class_stream_1a3a9497de614792103ab8cb4759e01a69" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>findUntil</name></member>
+      <member refid="class_ble_serial_peripheral_base_1a27e43dcfd3cb2edee33b19ba9017ad7f" prot="public" virt="virtual"><scope>BleSerialPeripheralBase</scope><name>flush</name></member>
+      <member refid="class_ble_serial_peripheral_base_1a97cee829a39ff3a62e3108f05fba64d8" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>getRxLost</name></member>
+      <member refid="class_ble_serial_peripheral_base_1a0457f2495023d47468a2f5b1964c0233" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>getServiceUuid</name></member>
+      <member refid="class_ble_serial_peripheral_base_1a09c779ad7767bc195687c525548127d9" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>getTxLost</name></member>
+      <member refid="class_ble_serial_peripheral_base_1aa4ca5408c166841e1fd5ea9aa3a1c4a5" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>getTxMaxWrite</name></member>
+      <member refid="class_print_1a88a4a829fb5d589efb43955ad0cbddcc" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>getWriteError</name></member>
+      <member refid="class_ble_serial_peripheral_base_1a4dac5d6f8efb72b1df255e942a054560" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>lock</name></member>
+      <member refid="class_ble_serial_peripheral_base_1a441dc005092891279967444cb2dc2ff2" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>loop</name></member>
+      <member refid="class_ble_serial_peripheral_base_1aa7dae11f0fce6c2d64f77c3d0e9f5130" prot="private" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>mutex</name></member>
+      <member refid="class_ble_serial_peripheral_base_1a2271cfcdb1170bbae2e27a091084b4cc" prot="private" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>onDataReceived</name></member>
+      <member refid="class_ble_serial_peripheral_base_1a5723e9bfc86d7debcf7e3e1498ef1bc2" prot="private" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>onDataReceivedStatic</name></member>
+      <member refid="class_stream_1a5e5a0cc11eb586d89dcb7fa8e53a87e8" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>parseFloat</name></member>
+      <member refid="class_stream_1a497ffcbcb4d5bb889a8fde487bcc1b98" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>parseInt</name></member>
+      <member refid="class_ble_serial_peripheral_base_1a6ba8319f3b1a69c96c4e8b3f8dde5bbc" prot="public" virt="virtual"><scope>BleSerialPeripheralBase</scope><name>peek</name></member>
+      <member refid="class_print_1acfe80773011eb17dfb52c2fba517a093" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>print</name></member>
+      <member refid="class_print_1a1e411d07a8ffec5faf7ce485bac0f029" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>print</name></member>
+      <member refid="class_print_1ae35481e77567618140cd58d8b96d3747" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>print</name></member>
+      <member refid="class_print_1aa28ddbde83b14df73b41c919ecc4478f" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>print</name></member>
+      <member refid="class_print_1afcd7d3a184df961a502643e4fb638c52" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>print</name></member>
+      <member refid="class_print_1a0c663ac015ebc037ea044ba2e2cf2947" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>print</name></member>
+      <member refid="class_print_1acb8c6dcd4339b024436002aa9a6f4be2" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>print</name></member>
+      <member refid="class_print_1ad89472bdb6539423a42d350beec02ff4" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>print</name></member>
+      <member refid="class_print_1a901b0f06ae34aab31b8fbb4298f0596e" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>print</name></member>
+      <member refid="class_print_1a08a461c9fee5fd8f5795d6e9f61e3d5b" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>printf</name></member>
+      <member refid="class_print_1ad337ce3f7977411b7d34d47a51e5737e" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>println</name></member>
+      <member refid="class_print_1a80fdd92db4b396062586bcb3e08d3835" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>println</name></member>
+      <member refid="class_print_1a000b3fd5b723cb6c7db0d3231a9ef2f8" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>println</name></member>
+      <member refid="class_print_1a82aa91bbd859f28a0a3b4869e5bfcadd" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>println</name></member>
+      <member refid="class_print_1a2608232c1f10f654111ff447de16d60b" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>println</name></member>
+      <member refid="class_print_1a82bbe59b28440c29e55ff3597eb45376" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>println</name></member>
+      <member refid="class_print_1afa936d7e8dd329d9162f2cd28f42681e" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>println</name></member>
+      <member refid="class_print_1a178b90baf9f74f0945f5c64aafec59ea" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>println</name></member>
+      <member refid="class_print_1a20f9e104153b62e720c9b4c348b44f00" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>println</name></member>
+      <member refid="class_print_1a169b128f9e22f0c15883768f580541a2" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>println</name></member>
+      <member refid="class_print_1afa41aa5211c54b7b4d79b9286880c337" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>printlnf</name></member>
+      <member refid="class_ble_serial_peripheral_base_1a4933bc35d89028134597b46315806ce4" prot="public" virt="virtual"><scope>BleSerialPeripheralBase</scope><name>read</name></member>
+      <member refid="class_stream_1a45fd1336a323ea83b16e8507055f44ea" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>readBytes</name></member>
+      <member refid="class_stream_1af84672a4fb2620466958d3118d4fea00" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>readBytesUntil</name></member>
+      <member refid="class_stream_1a1c60bdda2b65d78e5a1362d51b856c5a" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>readString</name></member>
+      <member refid="class_stream_1a6a409da87c552909260d8cc428c5ca70" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>readStringUntil</name></member>
+      <member refid="class_ble_serial_peripheral_base_1ab2c5399569ecc3f23fd9f5c6d3793ac6" prot="private" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>rxCharacteristic</name></member>
+      <member refid="class_ble_serial_peripheral_base_1aed85b33a9cf92d6e17c469cc0e7458b8" prot="private" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>rxLost</name></member>
+      <member refid="class_ble_serial_peripheral_base_1a8daa928822446753ec6414034efb8372" prot="private" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>rxRing</name></member>
+      <member refid="class_stream_1abaa50647d6dbb3baf7697a2691a06177" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>setTimeout</name></member>
+      <member refid="class_ble_serial_peripheral_base_1a454bb53617c96d564f3e20d13765de9f" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>setTxMaxWrite</name></member>
+      <member refid="class_ble_serial_peripheral_base_1a01072243aecf86ea5030019a6e900fbb" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>setup</name></member>
+      <member refid="class_ble_serial_peripheral_base_1a8cbd498c449f3c6c5d4cb3ff1b43db20" prot="private" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>txBuf</name></member>
+      <member refid="class_ble_serial_peripheral_base_1a9923e255f6550f80df3f15fbfe8cf573" prot="private" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>txBufSize</name></member>
+      <member refid="class_ble_serial_peripheral_base_1aef5e834f8653a624b1004670aa01f458" prot="private" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>txCharacteristic</name></member>
+      <member refid="class_ble_serial_peripheral_base_1ae9ba73bea8887d2287ab09897e9d48f8" prot="private" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>txCur</name></member>
+      <member refid="class_ble_serial_peripheral_base_1ab874b2b274861bc787a5ea6508a16620" prot="private" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>txLost</name></member>
+      <member refid="class_ble_serial_peripheral_base_1ad7b212124dccffa008d21b37bc22449a" prot="private" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>txMaxWrite</name></member>
+      <member refid="class_ble_serial_peripheral_base_1ab6c9183c6e2d42babe005b222b984d03" prot="public" virt="non-virtual"><scope>BleSerialPeripheralBase</scope><name>unlock</name></member>
+      <member refid="class_ble_serial_peripheral_base_1ac041322685f26d921f60d01a2ed99e83" prot="public" virt="virtual"><scope>BleSerialPeripheralBase</scope><name>write</name></member>
+      <member refid="class_print_1a5b40e0e9cab1f2fe5bb0cb22ffe5adda" prot="public" virt="non-virtual" ambiguityscope="Stream::"><scope>BleSerialPeripheralBase</scope><name>write</name></member>
+      <member refid="class_print_1a88864e109589a5be9b0f5ba1327f8421" prot="public" virt="virtual" ambiguityscope="Stream::"><scope>BleSerialPeripheralBase</scope><name>write</name></member>
+      <member refid="class_ble_serial_peripheral_base_1ab693dd8a00b3af5ed375d68647bb4712" prot="public" virt="virtual"><scope>BleSerialPeripheralBase</scope><name>~BleSerialPeripheralBase</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

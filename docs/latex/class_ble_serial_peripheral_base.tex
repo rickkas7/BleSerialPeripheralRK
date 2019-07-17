@@ -1,0 +1,216 @@
+\hypertarget{class_ble_serial_peripheral_base}{}\section{Ble\+Serial\+Peripheral\+Base Class Reference}
+\label{class_ble_serial_peripheral_base}\index{Ble\+Serial\+Peripheral\+Base@{Ble\+Serial\+Peripheral\+Base}}
+
+
+Main class for B\+LE U\+A\+RT funtionality.  
+
+
+
+
+{\ttfamily \#include $<$Ble\+Serial\+Peripheral\+R\+K.\+h$>$}
+
+Inheritance diagram for Ble\+Serial\+Peripheral\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_ble_serial_peripheral_base}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_ble_serial_peripheral_base_a1c1811adb8b03e7c0cb6e5f6c0a42fab}{Ble\+Serial\+Peripheral\+Base}} (uint8\+\_\+t $\ast$tx\+Buf, size\+\_\+t tx\+Buf\+Size, uint8\+\_\+t $\ast$rx\+Buf, size\+\_\+t rx\+Buf\+Size)
+\begin{DoxyCompactList}\small\item\em Construct an object with passed-\/in buffers. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_ble_serial_peripheral_base_ab693dd8a00b3af5ed375d68647bb4712}{$\sim$\+Ble\+Serial\+Peripheral\+Base}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ble_serial_peripheral_base_a01072243aecf86ea5030019a6e900fbb}\label{class_ble_serial_peripheral_base_a01072243aecf86ea5030019a6e900fbb}} 
+void \mbox{\hyperlink{class_ble_serial_peripheral_base_a01072243aecf86ea5030019a6e900fbb}{setup}} ()
+\begin{DoxyCompactList}\small\item\em You must call this from \mbox{\hyperlink{class_ble_serial_peripheral_base_a01072243aecf86ea5030019a6e900fbb}{setup()}} to initialize the object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ble_serial_peripheral_base_a441dc005092891279967444cb2dc2ff2}\label{class_ble_serial_peripheral_base_a441dc005092891279967444cb2dc2ff2}} 
+void \mbox{\hyperlink{class_ble_serial_peripheral_base_a441dc005092891279967444cb2dc2ff2}{loop}} ()
+\begin{DoxyCompactList}\small\item\em You must call this from \mbox{\hyperlink{class_ble_serial_peripheral_base_a441dc005092891279967444cb2dc2ff2}{loop()}} to process outgoing data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ble_serial_peripheral_base_a870258aa62e285cc0e2717476ae51145}{advertise}} ()
+\begin{DoxyCompactList}\small\item\em Call this to advertise the B\+LE U\+A\+RT service. \end{DoxyCompactList}\item 
+Ble\+Uuid \mbox{\hyperlink{class_ble_serial_peripheral_base_a0457f2495023d47468a2f5b1964c0233}{get\+Service\+Uuid}} () const
+\begin{DoxyCompactList}\small\item\em Get the service U\+U\+ID for the U\+A\+RT service. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ble_serial_peripheral_base_a4dac5d6f8efb72b1df255e942a054560}{lock}} ()
+\begin{DoxyCompactList}\small\item\em Obtain a mutex lock on the TX buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ble_serial_peripheral_base_ab6c9183c6e2d42babe005b222b984d03}{unlock}} ()
+\begin{DoxyCompactList}\small\item\em Release the mutex lock on the TX buffer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ble_serial_peripheral_base_a946cc56677f03db99de9409851427941}\label{class_ble_serial_peripheral_base_a946cc56677f03db99de9409851427941}} 
+virtual int \mbox{\hyperlink{class_ble_serial_peripheral_base_a946cc56677f03db99de9409851427941}{available}} ()
+\begin{DoxyCompactList}\small\item\em Override for \mbox{\hyperlink{class_stream}{Stream}} class, returns the number of bytes that can be read right now. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ble_serial_peripheral_base_a4933bc35d89028134597b46315806ce4}\label{class_ble_serial_peripheral_base_a4933bc35d89028134597b46315806ce4}} 
+virtual int \mbox{\hyperlink{class_ble_serial_peripheral_base_a4933bc35d89028134597b46315806ce4}{read}} ()
+\begin{DoxyCompactList}\small\item\em Override for the \mbox{\hyperlink{class_stream}{Stream}} class, reads a byte of data from the input ring buffer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ble_serial_peripheral_base_a6ba8319f3b1a69c96c4e8b3f8dde5bbc}\label{class_ble_serial_peripheral_base_a6ba8319f3b1a69c96c4e8b3f8dde5bbc}} 
+virtual int \mbox{\hyperlink{class_ble_serial_peripheral_base_a6ba8319f3b1a69c96c4e8b3f8dde5bbc}{peek}} ()
+\begin{DoxyCompactList}\small\item\em Override for the \mbox{\hyperlink{class_stream}{Stream}} class, reads a byte of data, but leaves it in the buffer so \mbox{\hyperlink{class_ble_serial_peripheral_base_a4933bc35d89028134597b46315806ce4}{read()}} will get the same byte of data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ble_serial_peripheral_base_a27e43dcfd3cb2edee33b19ba9017ad7f}\label{class_ble_serial_peripheral_base_a27e43dcfd3cb2edee33b19ba9017ad7f}} 
+virtual void \mbox{\hyperlink{class_ble_serial_peripheral_base_a27e43dcfd3cb2edee33b19ba9017ad7f}{flush}} ()
+\begin{DoxyCompactList}\small\item\em Override for the \mbox{\hyperlink{class_stream}{Stream}} class. Currently does nothing. \end{DoxyCompactList}\item 
+virtual size\+\_\+t \mbox{\hyperlink{class_ble_serial_peripheral_base_ac041322685f26d921f60d01a2ed99e83}{write}} (uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Virtual override from the \mbox{\hyperlink{class_print}{Print}} class. Writes a byte of data. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_ble_serial_peripheral_base_a97cee829a39ff3a62e3108f05fba64d8}{get\+Rx\+Lost}} () const
+\item 
+\mbox{\Hypertarget{class_ble_serial_peripheral_base_af2dc5ee170da6783176ce6c96456fdb4}\label{class_ble_serial_peripheral_base_af2dc5ee170da6783176ce6c96456fdb4}} 
+void \mbox{\hyperlink{class_ble_serial_peripheral_base_af2dc5ee170da6783176ce6c96456fdb4}{clear\+Rx\+Lost}} ()
+\begin{DoxyCompactList}\small\item\em Clears the rx\+Lost counter. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_ble_serial_peripheral_base_a09c779ad7767bc195687c525548127d9}{get\+Tx\+Lost}} () const
+\item 
+\mbox{\Hypertarget{class_ble_serial_peripheral_base_a3f7273afa5985d6df935b530d9550b6c}\label{class_ble_serial_peripheral_base_a3f7273afa5985d6df935b530d9550b6c}} 
+void \mbox{\hyperlink{class_ble_serial_peripheral_base_a3f7273afa5985d6df935b530d9550b6c}{clear\+Tx\+Lost}} ()
+\begin{DoxyCompactList}\small\item\em Clears the tx\+Lost counter. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ble_serial_peripheral_base_aa4ca5408c166841e1fd5ea9aa3a1c4a5}\label{class_ble_serial_peripheral_base_aa4ca5408c166841e1fd5ea9aa3a1c4a5}} 
+size\+\_\+t \mbox{\hyperlink{class_ble_serial_peripheral_base_aa4ca5408c166841e1fd5ea9aa3a1c4a5}{get\+Tx\+Max\+Write}} () const
+\begin{DoxyCompactList}\small\item\em Get the maximum chunk size to send. The default is 236 bytes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ble_serial_peripheral_base_a454bb53617c96d564f3e20d13765de9f}{set\+Tx\+Max\+Write}} (size\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Set the maximum chunk size to send. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Main class for B\+LE U\+A\+RT funtionality. 
+
+Normally you\textquotesingle{}ll instantiate a \mbox{\hyperlink{class_ble_serial_peripheral_static}{Ble\+Serial\+Peripheral\+Static}} as a global variable instead of using this class.
+
+You can only have one instance of this object per device!
+
+Note\+: This method subclasses \mbox{\hyperlink{class_stream}{Stream}}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_ble_serial_peripheral_base_a1c1811adb8b03e7c0cb6e5f6c0a42fab}\label{class_ble_serial_peripheral_base_a1c1811adb8b03e7c0cb6e5f6c0a42fab}} 
+\index{Ble\+Serial\+Peripheral\+Base@{Ble\+Serial\+Peripheral\+Base}!Ble\+Serial\+Peripheral\+Base@{Ble\+Serial\+Peripheral\+Base}}
+\index{Ble\+Serial\+Peripheral\+Base@{Ble\+Serial\+Peripheral\+Base}!Ble\+Serial\+Peripheral\+Base@{Ble\+Serial\+Peripheral\+Base}}
+\subsubsection{\texorpdfstring{Ble\+Serial\+Peripheral\+Base()}{BleSerialPeripheralBase()}}
+{\footnotesize\ttfamily Ble\+Serial\+Peripheral\+Base\+::\+Ble\+Serial\+Peripheral\+Base (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{tx\+Buf,  }\item[{size\+\_\+t}]{tx\+Buf\+Size,  }\item[{uint8\+\_\+t $\ast$}]{rx\+Buf,  }\item[{size\+\_\+t}]{rx\+Buf\+Size }\end{DoxyParamCaption})}
+
+
+
+Construct an object with passed-\/in buffers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tx\+Buf} & Pointer to buffer for tx (this device to the other device) \\
+\hline
+{\em tx\+Buf\+Size} & Size of the buffer in bytes \\
+\hline
+{\em rx\+Buf} & Pointer to the buffer for rx (the other device to this device) \\
+\hline
+{\em rx\+Buf\+Size} & Size of the buffer in bytes\\
+\hline
+\end{DoxyParams}
+Normally you\textquotesingle{}d use \mbox{\hyperlink{class_ble_serial_peripheral_static}{Ble\+Serial\+Peripheral\+Static}} as a global variable, but in unusual cases you can construct the object with this constructor and pass in the buffers to use. \mbox{\Hypertarget{class_ble_serial_peripheral_base_ab693dd8a00b3af5ed375d68647bb4712}\label{class_ble_serial_peripheral_base_ab693dd8a00b3af5ed375d68647bb4712}} 
+\index{Ble\+Serial\+Peripheral\+Base@{Ble\+Serial\+Peripheral\+Base}!````~Ble\+Serial\+Peripheral\+Base@{$\sim$\+Ble\+Serial\+Peripheral\+Base}}
+\index{````~Ble\+Serial\+Peripheral\+Base@{$\sim$\+Ble\+Serial\+Peripheral\+Base}!Ble\+Serial\+Peripheral\+Base@{Ble\+Serial\+Peripheral\+Base}}
+\subsubsection{\texorpdfstring{$\sim$\+Ble\+Serial\+Peripheral\+Base()}{~BleSerialPeripheralBase()}}
+{\footnotesize\ttfamily Ble\+Serial\+Peripheral\+Base\+::$\sim$\+Ble\+Serial\+Peripheral\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+You normally instantiate this object as a global variable so you won\textquotesingle{}t be deleting it. The buffers you passed in are not freed! 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ble_serial_peripheral_base_a870258aa62e285cc0e2717476ae51145}\label{class_ble_serial_peripheral_base_a870258aa62e285cc0e2717476ae51145}} 
+\index{Ble\+Serial\+Peripheral\+Base@{Ble\+Serial\+Peripheral\+Base}!advertise@{advertise}}
+\index{advertise@{advertise}!Ble\+Serial\+Peripheral\+Base@{Ble\+Serial\+Peripheral\+Base}}
+\subsubsection{\texorpdfstring{advertise()}{advertise()}}
+{\footnotesize\ttfamily void Ble\+Serial\+Peripheral\+Base\+::advertise (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Call this to advertise the B\+LE U\+A\+RT service. 
+
+If you have multiple services you want to advertise, instead of calling this method use \mbox{\hyperlink{class_ble_serial_peripheral_base_a0457f2495023d47468a2f5b1964c0233}{get\+Service\+Uuid()}} to get the U\+U\+ID of the U\+A\+RT service and add it to your advertising data. \mbox{\Hypertarget{class_ble_serial_peripheral_base_a97cee829a39ff3a62e3108f05fba64d8}\label{class_ble_serial_peripheral_base_a97cee829a39ff3a62e3108f05fba64d8}} 
+\index{Ble\+Serial\+Peripheral\+Base@{Ble\+Serial\+Peripheral\+Base}!get\+Rx\+Lost@{get\+Rx\+Lost}}
+\index{get\+Rx\+Lost@{get\+Rx\+Lost}!Ble\+Serial\+Peripheral\+Base@{Ble\+Serial\+Peripheral\+Base}}
+\subsubsection{\texorpdfstring{get\+Rx\+Lost()}{getRxLost()}}
+{\footnotesize\ttfamily size\+\_\+t Ble\+Serial\+Peripheral\+Base\+::get\+Rx\+Lost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the number of receive bytes lost because the receive buffer was full.
+
+Data is received asynchronously by B\+LE. If you do not empty the data from loop fast enough or use too small of a buffer, the data will be lost. The rx\+Lost counter is the number of bytes that have been lost. \mbox{\Hypertarget{class_ble_serial_peripheral_base_a0457f2495023d47468a2f5b1964c0233}\label{class_ble_serial_peripheral_base_a0457f2495023d47468a2f5b1964c0233}} 
+\index{Ble\+Serial\+Peripheral\+Base@{Ble\+Serial\+Peripheral\+Base}!get\+Service\+Uuid@{get\+Service\+Uuid}}
+\index{get\+Service\+Uuid@{get\+Service\+Uuid}!Ble\+Serial\+Peripheral\+Base@{Ble\+Serial\+Peripheral\+Base}}
+\subsubsection{\texorpdfstring{get\+Service\+Uuid()}{getServiceUuid()}}
+{\footnotesize\ttfamily Ble\+Uuid Ble\+Serial\+Peripheral\+Base\+::get\+Service\+Uuid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the service U\+U\+ID for the U\+A\+RT service. 
+
+This is used if you advertise multiple services. \mbox{\Hypertarget{class_ble_serial_peripheral_base_a09c779ad7767bc195687c525548127d9}\label{class_ble_serial_peripheral_base_a09c779ad7767bc195687c525548127d9}} 
+\index{Ble\+Serial\+Peripheral\+Base@{Ble\+Serial\+Peripheral\+Base}!get\+Tx\+Lost@{get\+Tx\+Lost}}
+\index{get\+Tx\+Lost@{get\+Tx\+Lost}!Ble\+Serial\+Peripheral\+Base@{Ble\+Serial\+Peripheral\+Base}}
+\subsubsection{\texorpdfstring{get\+Tx\+Lost()}{getTxLost()}}
+{\footnotesize\ttfamily size\+\_\+t Ble\+Serial\+Peripheral\+Base\+::get\+Tx\+Lost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get the number of transmit bytes lost because the transmit buffer was full.
+
+Data can be written from other threads and is buffered in the tx\+Buf. During \mbox{\hyperlink{class_ble_serial_peripheral_base_a441dc005092891279967444cb2dc2ff2}{loop()}}, the data is sent (in chunks up to tx\+Max\+Write bytes). If you write more data than can fit in the tx\+Buf, then the data is lost and the tx\+Lost counter is incremented. \mbox{\Hypertarget{class_ble_serial_peripheral_base_a4dac5d6f8efb72b1df255e942a054560}\label{class_ble_serial_peripheral_base_a4dac5d6f8efb72b1df255e942a054560}} 
+\index{Ble\+Serial\+Peripheral\+Base@{Ble\+Serial\+Peripheral\+Base}!lock@{lock}}
+\index{lock@{lock}!Ble\+Serial\+Peripheral\+Base@{Ble\+Serial\+Peripheral\+Base}}
+\subsubsection{\texorpdfstring{lock()}{lock()}}
+{\footnotesize\ttfamily void Ble\+Serial\+Peripheral\+Base\+::lock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Obtain a mutex lock on the TX buffer. 
+
+This is used internally, you should not normally need to call this. \mbox{\Hypertarget{class_ble_serial_peripheral_base_a454bb53617c96d564f3e20d13765de9f}\label{class_ble_serial_peripheral_base_a454bb53617c96d564f3e20d13765de9f}} 
+\index{Ble\+Serial\+Peripheral\+Base@{Ble\+Serial\+Peripheral\+Base}!set\+Tx\+Max\+Write@{set\+Tx\+Max\+Write}}
+\index{set\+Tx\+Max\+Write@{set\+Tx\+Max\+Write}!Ble\+Serial\+Peripheral\+Base@{Ble\+Serial\+Peripheral\+Base}}
+\subsubsection{\texorpdfstring{set\+Tx\+Max\+Write()}{setTxMaxWrite()}}
+{\footnotesize\ttfamily void Ble\+Serial\+Peripheral\+Base\+::set\+Tx\+Max\+Write (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the maximum chunk size to send. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The value in bytes to set.\\
+\hline
+\end{DoxyParams}
+It set larger than 244, any data larger than that will be silently discarded. If your B\+LE central implementation does not want that much data at once, set it lower.
+
+Note that during loop all of the outstanding data up to tx\+Max\+Write bytes will be sent. If there are fewer than tx\+Max\+Write byte then the smaller amount of data will be sent; it does not wait around for more data.
+
+Even if you write multiple small writes using \mbox{\hyperlink{class_ble_serial_peripheral_base_ac041322685f26d921f60d01a2ed99e83}{write()}} or \mbox{\hyperlink{class_print_acfe80773011eb17dfb52c2fba517a093}{print()}} methods they will be bunched up into more efficient larger writes. \mbox{\Hypertarget{class_ble_serial_peripheral_base_ab6c9183c6e2d42babe005b222b984d03}\label{class_ble_serial_peripheral_base_ab6c9183c6e2d42babe005b222b984d03}} 
+\index{Ble\+Serial\+Peripheral\+Base@{Ble\+Serial\+Peripheral\+Base}!unlock@{unlock}}
+\index{unlock@{unlock}!Ble\+Serial\+Peripheral\+Base@{Ble\+Serial\+Peripheral\+Base}}
+\subsubsection{\texorpdfstring{unlock()}{unlock()}}
+{\footnotesize\ttfamily void Ble\+Serial\+Peripheral\+Base\+::unlock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Release the mutex lock on the TX buffer. 
+
+This is used internally, you should not normally need to call this. \mbox{\Hypertarget{class_ble_serial_peripheral_base_ac041322685f26d921f60d01a2ed99e83}\label{class_ble_serial_peripheral_base_ac041322685f26d921f60d01a2ed99e83}} 
+\index{Ble\+Serial\+Peripheral\+Base@{Ble\+Serial\+Peripheral\+Base}!write@{write}}
+\index{write@{write}!Ble\+Serial\+Peripheral\+Base@{Ble\+Serial\+Peripheral\+Base}}
+\subsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily size\+\_\+t Ble\+Serial\+Peripheral\+Base\+::write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual override from the \mbox{\hyperlink{class_print}{Print}} class. Writes a byte of data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & The byte to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if successful or -\/1 on failure
+\end{DoxyReturn}
+Note that writes are accumulated in the tx\+Buf, then sent out in bunches from the loop thread. If you overflow the tx\+Buf, then the data is discarded and -\/1 is returned. The tx\+Lost counter is incremented as well. 
+
+Implements \mbox{\hyperlink{class_print_ab9195b97274029f693aaddce6c7a0021}{Print}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Ble\+Serial\+Peripheral\+R\+K.\+h\item 
+src/Ble\+Serial\+Peripheral\+R\+K.\+cpp\end{DoxyCompactItemize}
